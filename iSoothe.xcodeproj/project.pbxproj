@@ -10,11 +10,17 @@
 		6370E91F1AD4726F0053BE6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E91E1AD4726F0053BE6D /* main.m */; };
 		6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9211AD4726F0053BE6D /* AppDelegate.m */; };
 		6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */; };
-		6370E9281AD4726F0053BE6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9271AD4726F0053BE6D /* ViewController.m */; };
 		6370E92B1AD4726F0053BE6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9291AD4726F0053BE6D /* Main.storyboard */; };
 		6370E92D1AD4726F0053BE6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6370E92C1AD4726F0053BE6D /* Images.xcassets */; };
 		6370E9301AD4726F0053BE6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */; };
 		6370E93C1AD4726F0053BE6D /* iSootheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E93B1AD4726F0053BE6D /* iSootheTests.m */; };
+		6370E9481AD477100053BE6D /* Exercises.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9471AD477100053BE6D /* Exercises.m */; };
+		6370E94B1AD477110053BE6D /* Journal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E94A1AD477110053BE6D /* Journal.m */; };
+		6370E94E1AD477110053BE6D /* ButtonActivations.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E94D1AD477110053BE6D /* ButtonActivations.m */; };
+		6370E9511AD477110053BE6D /* Quotes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9501AD477110053BE6D /* Quotes.m */; };
+		6370E9541AD477110053BE6D /* Therapist.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9531AD477110053BE6D /* Therapist.m */; };
+		6370E9571AD477110053BE6D /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9561AD477110053BE6D /* Patient.m */; };
+		6370E95A1AD477110053BE6D /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9591AD477110053BE6D /* Activities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +40,26 @@
 		6370E9201AD4726F0053BE6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6370E9211AD4726F0053BE6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSoothe.xcdatamodel; sourceTree = "<group>"; };
-		6370E9261AD4726F0053BE6D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6370E9271AD4726F0053BE6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6370E92A1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6370E92C1AD4726F0053BE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6370E92F1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6370E9351AD4726F0053BE6D /* iSootheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSootheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6370E93A1AD4726F0053BE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6370E93B1AD4726F0053BE6D /* iSootheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSootheTests.m; sourceTree = "<group>"; };
+		6370E9461AD477100053BE6D /* Exercises.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercises.h; sourceTree = "<group>"; };
+		6370E9471AD477100053BE6D /* Exercises.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercises.m; sourceTree = "<group>"; };
+		6370E9491AD477110053BE6D /* Journal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Journal.h; sourceTree = "<group>"; };
+		6370E94A1AD477110053BE6D /* Journal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Journal.m; sourceTree = "<group>"; };
+		6370E94C1AD477110053BE6D /* ButtonActivations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonActivations.h; sourceTree = "<group>"; };
+		6370E94D1AD477110053BE6D /* ButtonActivations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonActivations.m; sourceTree = "<group>"; };
+		6370E94F1AD477110053BE6D /* Quotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quotes.h; sourceTree = "<group>"; };
+		6370E9501AD477110053BE6D /* Quotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quotes.m; sourceTree = "<group>"; };
+		6370E9521AD477110053BE6D /* Therapist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Therapist.h; sourceTree = "<group>"; };
+		6370E9531AD477110053BE6D /* Therapist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Therapist.m; sourceTree = "<group>"; };
+		6370E9551AD477110053BE6D /* Patient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
+		6370E9561AD477110053BE6D /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		6370E9581AD477110053BE6D /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
+		6370E9591AD477110053BE6D /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +103,11 @@
 			children = (
 				6370E9201AD4726F0053BE6D /* AppDelegate.h */,
 				6370E9211AD4726F0053BE6D /* AppDelegate.m */,
-				6370E9261AD4726F0053BE6D /* ViewController.h */,
-				6370E9271AD4726F0053BE6D /* ViewController.m */,
 				6370E9291AD4726F0053BE6D /* Main.storyboard */,
 				6370E92C1AD4726F0053BE6D /* Images.xcassets */,
 				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
 				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
+				6370E9451AD476E10053BE6D /* DBObjects */,
 				6370E91C1AD4726F0053BE6D /* Supporting Files */,
 			);
 			path = iSoothe;
@@ -120,6 +137,27 @@
 				6370E93A1AD4726F0053BE6D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6370E9451AD476E10053BE6D /* DBObjects */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9581AD477110053BE6D /* Activities.h */,
+				6370E9591AD477110053BE6D /* Activities.m */,
+				6370E9551AD477110053BE6D /* Patient.h */,
+				6370E9561AD477110053BE6D /* Patient.m */,
+				6370E9521AD477110053BE6D /* Therapist.h */,
+				6370E9531AD477110053BE6D /* Therapist.m */,
+				6370E94F1AD477110053BE6D /* Quotes.h */,
+				6370E9501AD477110053BE6D /* Quotes.m */,
+				6370E94C1AD477110053BE6D /* ButtonActivations.h */,
+				6370E94D1AD477110053BE6D /* ButtonActivations.m */,
+				6370E9491AD477110053BE6D /* Journal.h */,
+				6370E94A1AD477110053BE6D /* Journal.m */,
+				6370E9461AD477100053BE6D /* Exercises.h */,
+				6370E9471AD477100053BE6D /* Exercises.m */,
+			);
+			name = DBObjects;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +260,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6370E95A1AD477110053BE6D /* Activities.m in Sources */,
+				6370E94B1AD477110053BE6D /* Journal.m in Sources */,
 				6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */,
+				6370E9541AD477110053BE6D /* Therapist.m in Sources */,
+				6370E9571AD477110053BE6D /* Patient.m in Sources */,
+				6370E9481AD477100053BE6D /* Exercises.m in Sources */,
+				6370E94E1AD477110053BE6D /* ButtonActivations.m in Sources */,
 				6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */,
-				6370E9281AD4726F0053BE6D /* ViewController.m in Sources */,
+				6370E9511AD477110053BE6D /* Quotes.m in Sources */,
 				6370E91F1AD4726F0053BE6D /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

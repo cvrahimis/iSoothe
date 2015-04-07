@@ -1,4 +1,66 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6751" systemVersion="14C1514" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Activities" representedClassName="Activities" syncable="YES">
+        <attribute name="activity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="activityId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mood" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="therapistId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="urge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="activity" inverseEntity="Patient" syncable="YES"/>
+        <relationship name="therapist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Therapist" inverseName="activity" inverseEntity="Therapist" syncable="YES"/>
+    </entity>
+    <entity name="ButtonActivations" representedClassName="ButtonActivations" syncable="YES">
+        <attribute name="buttonId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="patientId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="therapistId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="buttonActivations" inverseEntity="Patient" syncable="YES"/>
+        <relationship name="therapist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Therapist" inverseName="buttonActivations" inverseEntity="Therapist" syncable="YES"/>
+    </entity>
+    <entity name="Exercises" representedClassName="Exercises" syncable="YES">
+        <attribute name="descriptions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mainPicture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pictures" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Journal" representedClassName="Journal" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Patient" representedClassName="Patient" syncable="YES">
+        <attribute name="patientFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="patientLastName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientLogin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientPassword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="therapistId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activities" inverseName="patient" inverseEntity="Activities" syncable="YES"/>
+        <relationship name="buttonActivations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ButtonActivations" inverseName="patient" inverseEntity="ButtonActivations" syncable="YES"/>
+        <relationship name="therapist" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Therapist" inverseName="patient" inverseEntity="Therapist" syncable="YES"/>
+    </entity>
+    <entity name="Quotes" representedClassName="Quotes" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quote" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Therapist" representedClassName="Therapist" syncable="YES">
+        <attribute name="therapistFirstName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="therapistId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="therapistLastName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="activity" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Activities" inverseName="therapist" inverseEntity="Activities" syncable="YES"/>
+        <relationship name="buttonActivations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ButtonActivations" inverseName="therapist" inverseEntity="ButtonActivations" syncable="YES"/>
+        <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="therapist" inverseEntity="Patient" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Therapist" positionX="-45" positionY="-277" width="128" height="133"/>
+        <element name="Quotes" positionX="225" positionY="-406" width="128" height="73"/>
+        <element name="Patient" positionX="594" positionY="38" width="128" height="178"/>
+        <element name="Journal" positionX="-200" positionY="-405" width="128" height="88"/>
+        <element name="Exercises" positionX="27" positionY="-405" width="128" height="103"/>
+        <element name="ButtonActivations" positionX="169" positionY="-90" width="128" height="133"/>
+        <element name="Activities" positionX="-279" positionY="-27" width="128" height="193"/>
+    </elements>
 </model>
