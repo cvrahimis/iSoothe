@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6370E91F1AD4726F0053BE6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E91E1AD4726F0053BE6D /* main.m */; };
+		6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9211AD4726F0053BE6D /* AppDelegate.m */; };
+		6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */; };
+		6370E9281AD4726F0053BE6D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9271AD4726F0053BE6D /* ViewController.m */; };
+		6370E92B1AD4726F0053BE6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9291AD4726F0053BE6D /* Main.storyboard */; };
+		6370E92D1AD4726F0053BE6D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6370E92C1AD4726F0053BE6D /* Images.xcassets */; };
+		6370E9301AD4726F0053BE6D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */; };
+		6370E93C1AD4726F0053BE6D /* iSootheTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E93B1AD4726F0053BE6D /* iSootheTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6370E9361AD4726F0053BE6D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6370E9111AD4726F0053BE6D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6370E9181AD4726F0053BE6D;
+			remoteInfo = iSoothe;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6370E9191AD4726F0053BE6D /* iSoothe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSoothe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6370E91D1AD4726F0053BE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6370E91E1AD4726F0053BE6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6370E9201AD4726F0053BE6D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6370E9211AD4726F0053BE6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSoothe.xcdatamodel; sourceTree = "<group>"; };
+		6370E9261AD4726F0053BE6D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6370E9271AD4726F0053BE6D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6370E92A1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6370E92C1AD4726F0053BE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6370E92F1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		6370E9351AD4726F0053BE6D /* iSootheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSootheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6370E93A1AD4726F0053BE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6370E93B1AD4726F0053BE6D /* iSootheTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iSootheTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6370E9161AD4726F0053BE6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6370E9321AD4726F0053BE6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6370E9101AD4726F0053BE6D = {
+			isa = PBXGroup;
+			children = (
+				6370E91B1AD4726F0053BE6D /* iSoothe */,
+				6370E9381AD4726F0053BE6D /* iSootheTests */,
+				6370E91A1AD4726F0053BE6D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6370E91A1AD4726F0053BE6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9191AD4726F0053BE6D /* iSoothe.app */,
+				6370E9351AD4726F0053BE6D /* iSootheTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6370E91B1AD4726F0053BE6D /* iSoothe */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9201AD4726F0053BE6D /* AppDelegate.h */,
+				6370E9211AD4726F0053BE6D /* AppDelegate.m */,
+				6370E9261AD4726F0053BE6D /* ViewController.h */,
+				6370E9271AD4726F0053BE6D /* ViewController.m */,
+				6370E9291AD4726F0053BE6D /* Main.storyboard */,
+				6370E92C1AD4726F0053BE6D /* Images.xcassets */,
+				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
+				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
+				6370E91C1AD4726F0053BE6D /* Supporting Files */,
+			);
+			path = iSoothe;
+			sourceTree = "<group>";
+		};
+		6370E91C1AD4726F0053BE6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6370E91D1AD4726F0053BE6D /* Info.plist */,
+				6370E91E1AD4726F0053BE6D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6370E9381AD4726F0053BE6D /* iSootheTests */ = {
+			isa = PBXGroup;
+			children = (
+				6370E93B1AD4726F0053BE6D /* iSootheTests.m */,
+				6370E9391AD4726F0053BE6D /* Supporting Files */,
+			);
+			path = iSootheTests;
+			sourceTree = "<group>";
+		};
+		6370E9391AD4726F0053BE6D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6370E93A1AD4726F0053BE6D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6370E9181AD4726F0053BE6D /* iSoothe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6370E93F1AD4726F0053BE6D /* Build configuration list for PBXNativeTarget "iSoothe" */;
+			buildPhases = (
+				6370E9151AD4726F0053BE6D /* Sources */,
+				6370E9161AD4726F0053BE6D /* Frameworks */,
+				6370E9171AD4726F0053BE6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iSoothe;
+			productName = iSoothe;
+			productReference = 6370E9191AD4726F0053BE6D /* iSoothe.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6370E9341AD4726F0053BE6D /* iSootheTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6370E9421AD4726F0053BE6D /* Build configuration list for PBXNativeTarget "iSootheTests" */;
+			buildPhases = (
+				6370E9311AD4726F0053BE6D /* Sources */,
+				6370E9321AD4726F0053BE6D /* Frameworks */,
+				6370E9331AD4726F0053BE6D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6370E9371AD4726F0053BE6D /* PBXTargetDependency */,
+			);
+			name = iSootheTests;
+			productName = iSootheTests;
+			productReference = 6370E9351AD4726F0053BE6D /* iSootheTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6370E9111AD4726F0053BE6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = cvrahimis;
+				TargetAttributes = {
+					6370E9181AD4726F0053BE6D = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					6370E9341AD4726F0053BE6D = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 6370E9181AD4726F0053BE6D;
+					};
+				};
+			};
+			buildConfigurationList = 6370E9141AD4726F0053BE6D /* Build configuration list for PBXProject "iSoothe" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6370E9101AD4726F0053BE6D;
+			productRefGroup = 6370E91A1AD4726F0053BE6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6370E9181AD4726F0053BE6D /* iSoothe */,
+				6370E9341AD4726F0053BE6D /* iSootheTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6370E9171AD4726F0053BE6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6370E92B1AD4726F0053BE6D /* Main.storyboard in Resources */,
+				6370E9301AD4726F0053BE6D /* LaunchScreen.xib in Resources */,
+				6370E92D1AD4726F0053BE6D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6370E9331AD4726F0053BE6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6370E9151AD4726F0053BE6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */,
+				6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */,
+				6370E9281AD4726F0053BE6D /* ViewController.m in Sources */,
+				6370E91F1AD4726F0053BE6D /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6370E9311AD4726F0053BE6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6370E93C1AD4726F0053BE6D /* iSootheTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6370E9371AD4726F0053BE6D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6370E9181AD4726F0053BE6D /* iSoothe */;
+			targetProxy = 6370E9361AD4726F0053BE6D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6370E9291AD4726F0053BE6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6370E92A1AD4726F0053BE6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6370E92F1AD4726F0053BE6D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6370E93D1AD4726F0053BE6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6370E93E1AD4726F0053BE6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6370E9401AD4726F0053BE6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSoothe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6370E9411AD4726F0053BE6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iSoothe/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6370E9431AD4726F0053BE6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSootheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSoothe.app/iSoothe";
+			};
+			name = Debug;
+		};
+		6370E9441AD4726F0053BE6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = iSootheTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iSoothe.app/iSoothe";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6370E9141AD4726F0053BE6D /* Build configuration list for PBXProject "iSoothe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6370E93D1AD4726F0053BE6D /* Debug */,
+				6370E93E1AD4726F0053BE6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6370E93F1AD4726F0053BE6D /* Build configuration list for PBXNativeTarget "iSoothe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6370E9401AD4726F0053BE6D /* Debug */,
+				6370E9411AD4726F0053BE6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6370E9421AD4726F0053BE6D /* Build configuration list for PBXNativeTarget "iSootheTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6370E9431AD4726F0053BE6D /* Debug */,
+				6370E9441AD4726F0053BE6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */,
+			);
+			currentVersion = 6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */;
+			path = iSoothe.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6370E9111AD4726F0053BE6D /* Project object */;
+}
