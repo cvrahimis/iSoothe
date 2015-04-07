@@ -21,6 +21,50 @@
 		6370E9541AD477110053BE6D /* Therapist.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9531AD477110053BE6D /* Therapist.m */; };
 		6370E9571AD477110053BE6D /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9561AD477110053BE6D /* Patient.m */; };
 		6370E95A1AD477110053BE6D /* Activities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9591AD477110053BE6D /* Activities.m */; };
+		6370E95D1AD479730053BE6D /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E95C1AD479730053BE6D /* UIView+Toast.m */; };
+		6370E9611AD4799E0053BE6D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9601AD4799E0053BE6D /* LoginViewController.m */; };
+		6370E9651AD479BF0053BE6D /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9641AD479BF0053BE6D /* Reachability.m */; };
+		6370E9691AD479F30053BE6D /* BackEndComunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9681AD479F30053BE6D /* BackEndComunicator.m */; };
+		6370E96D1AD47A360053BE6D /* RatingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E96C1AD47A360053BE6D /* RatingViewController.m */; };
+		6370E9751AD47A790053BE6D /* ExerciseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9701AD47A790053BE6D /* ExerciseTableViewController.m */; };
+		6370E9761AD47A790053BE6D /* ExerciseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9721AD47A790053BE6D /* ExerciseTableViewCell.m */; };
+		6370E9771AD47A790053BE6D /* ExerciseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9741AD47A790053BE6D /* ExerciseViewController.m */; };
+		6370E9801AD47AAB0053BE6D /* OpenEntriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E97A1AD47AAB0053BE6D /* OpenEntriesViewController.m */; };
+		6370E9811AD47AAB0053BE6D /* JournalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E97C1AD47AAB0053BE6D /* JournalViewController.m */; };
+		6370E9821AD47AAB0053BE6D /* OpenEntriesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E97E1AD47AAB0053BE6D /* OpenEntriesTableViewCell.m */; };
+		6370E9881AD47B1C0053BE6D /* MusicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9851AD47B1C0053BE6D /* MusicViewController.m */; };
+		6370E9891AD47B1C0053BE6D /* MusicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9871AD47B1C0053BE6D /* MusicTableViewCell.m */; };
+		6370E98F1AD47B3F0053BE6D /* RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E98C1AD47B3F0053BE6D /* RNActivityView.m */; };
+		6370E9901AD47B3F0053BE6D /* UIView+RNActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E98E1AD47B3F0053BE6D /* UIView+RNActivityView.m */; };
+		6370E9961AD47B670053BE6D /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9931AD47B670053BE6D /* SettingsViewController.m */; };
+		6370E9971AD47B670053BE6D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9951AD47B670053BE6D /* DrawingViewController.m */; };
+		6370E99B1AD47BA50053BE6D /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E99A1AD47BA50053BE6D /* ReadingViewController.m */; };
+		6370E99F1AD47BDA0053BE6D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E99E1AD47BDA0053BE6D /* HomeViewController.m */; };
+		6370E9B51AD47BFF0053BE6D /* doubleMusicNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */; };
+		6370E9B61AD47BFF0053BE6D /* leglifts1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */; };
+		6370E9B71AD47BFF0053BE6D /* backlifts3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */; };
+		6370E9B81AD47BFF0053BE6D /* leglifts2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */; };
+		6370E9B91AD47BFF0053BE6D /* plank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A51AD47BFF0053BE6D /* plank.jpg */; };
+		6370E9BA1AD47BFF0053BE6D /* backlifts1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A61AD47BFF0053BE6D /* backlifts1.jpg */; };
+		6370E9BB1AD47BFF0053BE6D /* backlifts2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A71AD47BFF0053BE6D /* backlifts2.jpg */; };
+		6370E9BC1AD47BFF0053BE6D /* leglifts3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A81AD47BFF0053BE6D /* leglifts3.jpg */; };
+		6370E9BD1AD47BFF0053BE6D /* crunches3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A91AD47BFF0053BE6D /* crunches3.jpg */; };
+		6370E9BE1AD47BFF0053BE6D /* crunches2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AA1AD47BFF0053BE6D /* crunches2.jpg */; };
+		6370E9BF1AD47BFF0053BE6D /* crunches1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AB1AD47BFF0053BE6D /* crunches1.jpg */; };
+		6370E9C01AD47BFF0053BE6D /* sideplank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AC1AD47BFF0053BE6D /* sideplank.jpg */; };
+		6370E9C11AD47BFF0053BE6D /* fastforward.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AD1AD47BFF0053BE6D /* fastforward.png */; };
+		6370E9C21AD47BFF0053BE6D /* thermometer.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AE1AD47BFF0053BE6D /* thermometer.png */; };
+		6370E9C31AD47BFF0053BE6D /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9AF1AD47BFF0053BE6D /* play.png */; };
+		6370E9C41AD47BFF0053BE6D /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9B01AD47BFF0053BE6D /* pause.png */; };
+		6370E9C51AD47BFF0053BE6D /* rewind.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9B11AD47BFF0053BE6D /* rewind.png */; };
+		6370E9C61AD47BFF0053BE6D /* morning.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9B21AD47BFF0053BE6D /* morning.jpg */; };
+		6370E9C71AD47BFF0053BE6D /* afternoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9B31AD47BFF0053BE6D /* afternoon.jpg */; };
+		6370E9C81AD47BFF0053BE6D /* evening.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9B41AD47BFF0053BE6D /* evening.jpg */; };
+		6370E9CC1AD47C5A0053BE6D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9CB1AD47C5A0053BE6D /* CoreData.framework */; };
+		6370E9CE1AD47C6E0053BE6D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9CD1AD47C6E0053BE6D /* Foundation.framework */; };
+		6370E9D01AD47C790053BE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9CF1AD47C790053BE6D /* UIKit.framework */; };
+		6370E9D21AD47C850053BE6D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */; };
+		6370E9D41AD47C910053BE6D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9D31AD47C910053BE6D /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +85,7 @@
 		6370E9211AD4726F0053BE6D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iSoothe.xcdatamodel; sourceTree = "<group>"; };
 		6370E92A1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6370E92C1AD4726F0053BE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6370E92C1AD4726F0053BE6D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iSoothe/Images.xcassets; sourceTree = "<group>"; };
 		6370E92F1AD4726F0053BE6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6370E9351AD4726F0053BE6D /* iSootheTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iSootheTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6370E93A1AD4726F0053BE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -60,6 +104,70 @@
 		6370E9561AD477110053BE6D /* Patient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		6370E9581AD477110053BE6D /* Activities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Activities.h; sourceTree = "<group>"; };
 		6370E9591AD477110053BE6D /* Activities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Activities.m; sourceTree = "<group>"; };
+		6370E95B1AD479730053BE6D /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		6370E95C1AD479730053BE6D /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		6370E95F1AD4799E0053BE6D /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6370E9601AD4799E0053BE6D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6370E9631AD479BF0053BE6D /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6370E9641AD479BF0053BE6D /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		6370E9671AD479F30053BE6D /* BackEndComunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackEndComunicator.h; sourceTree = "<group>"; };
+		6370E9681AD479F30053BE6D /* BackEndComunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackEndComunicator.m; sourceTree = "<group>"; };
+		6370E96B1AD47A360053BE6D /* RatingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingViewController.h; sourceTree = "<group>"; };
+		6370E96C1AD47A360053BE6D /* RatingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingViewController.m; sourceTree = "<group>"; };
+		6370E96F1AD47A790053BE6D /* ExerciseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewController.h; sourceTree = "<group>"; };
+		6370E9701AD47A790053BE6D /* ExerciseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewController.m; sourceTree = "<group>"; };
+		6370E9711AD47A790053BE6D /* ExerciseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseTableViewCell.h; sourceTree = "<group>"; };
+		6370E9721AD47A790053BE6D /* ExerciseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseTableViewCell.m; sourceTree = "<group>"; };
+		6370E9731AD47A790053BE6D /* ExerciseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseViewController.h; sourceTree = "<group>"; };
+		6370E9741AD47A790053BE6D /* ExerciseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseViewController.m; sourceTree = "<group>"; };
+		6370E9791AD47AAB0053BE6D /* OpenEntriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEntriesViewController.h; sourceTree = "<group>"; };
+		6370E97A1AD47AAB0053BE6D /* OpenEntriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEntriesViewController.m; sourceTree = "<group>"; };
+		6370E97B1AD47AAB0053BE6D /* JournalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalViewController.h; sourceTree = "<group>"; };
+		6370E97C1AD47AAB0053BE6D /* JournalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalViewController.m; sourceTree = "<group>"; };
+		6370E97D1AD47AAB0053BE6D /* OpenEntriesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEntriesTableViewCell.h; sourceTree = "<group>"; };
+		6370E97E1AD47AAB0053BE6D /* OpenEntriesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenEntriesTableViewCell.m; sourceTree = "<group>"; };
+		6370E97F1AD47AAB0053BE6D /* OpenEntriesViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEntriesViewControllerDelegate.h; sourceTree = "<group>"; };
+		6370E9841AD47B1C0053BE6D /* MusicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicViewController.h; sourceTree = "<group>"; };
+		6370E9851AD47B1C0053BE6D /* MusicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicViewController.m; sourceTree = "<group>"; };
+		6370E9861AD47B1C0053BE6D /* MusicTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicTableViewCell.h; sourceTree = "<group>"; };
+		6370E9871AD47B1C0053BE6D /* MusicTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicTableViewCell.m; sourceTree = "<group>"; };
+		6370E98B1AD47B3F0053BE6D /* RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNActivityView.h; sourceTree = "<group>"; };
+		6370E98C1AD47B3F0053BE6D /* RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNActivityView.m; sourceTree = "<group>"; };
+		6370E98D1AD47B3F0053BE6D /* UIView+RNActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+RNActivityView.h"; sourceTree = "<group>"; };
+		6370E98E1AD47B3F0053BE6D /* UIView+RNActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+RNActivityView.m"; sourceTree = "<group>"; };
+		6370E9921AD47B670053BE6D /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		6370E9931AD47B670053BE6D /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		6370E9941AD47B670053BE6D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		6370E9951AD47B670053BE6D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
+		6370E9991AD47BA50053BE6D /* ReadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadingViewController.h; sourceTree = "<group>"; };
+		6370E99A1AD47BA50053BE6D /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
+		6370E99D1AD47BDA0053BE6D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6370E99E1AD47BDA0053BE6D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleMusicNote.png; sourceTree = "<group>"; };
+		6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leglifts1.jpg; sourceTree = "<group>"; };
+		6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlifts3.jpg; sourceTree = "<group>"; };
+		6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leglifts2.jpg; sourceTree = "<group>"; };
+		6370E9A51AD47BFF0053BE6D /* plank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = plank.jpg; sourceTree = "<group>"; };
+		6370E9A61AD47BFF0053BE6D /* backlifts1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlifts1.jpg; sourceTree = "<group>"; };
+		6370E9A71AD47BFF0053BE6D /* backlifts2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlifts2.jpg; sourceTree = "<group>"; };
+		6370E9A81AD47BFF0053BE6D /* leglifts3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leglifts3.jpg; sourceTree = "<group>"; };
+		6370E9A91AD47BFF0053BE6D /* crunches3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crunches3.jpg; sourceTree = "<group>"; };
+		6370E9AA1AD47BFF0053BE6D /* crunches2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crunches2.jpg; sourceTree = "<group>"; };
+		6370E9AB1AD47BFF0053BE6D /* crunches1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = crunches1.jpg; sourceTree = "<group>"; };
+		6370E9AC1AD47BFF0053BE6D /* sideplank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sideplank.jpg; sourceTree = "<group>"; };
+		6370E9AD1AD47BFF0053BE6D /* fastforward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fastforward.png; sourceTree = "<group>"; };
+		6370E9AE1AD47BFF0053BE6D /* thermometer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thermometer.png; sourceTree = "<group>"; };
+		6370E9AF1AD47BFF0053BE6D /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		6370E9B01AD47BFF0053BE6D /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		6370E9B11AD47BFF0053BE6D /* rewind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rewind.png; sourceTree = "<group>"; };
+		6370E9B21AD47BFF0053BE6D /* morning.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = morning.jpg; sourceTree = "<group>"; };
+		6370E9B31AD47BFF0053BE6D /* afternoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = afternoon.jpg; sourceTree = "<group>"; };
+		6370E9B41AD47BFF0053BE6D /* evening.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = evening.jpg; sourceTree = "<group>"; };
+		6370E9CB1AD47C5A0053BE6D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		6370E9CD1AD47C6E0053BE6D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6370E9CF1AD47C790053BE6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6370E9D31AD47C910053BE6D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +175,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6370E9D41AD47C910053BE6D /* MediaPlayer.framework in Frameworks */,
+				6370E9D21AD47C850053BE6D /* SystemConfiguration.framework in Frameworks */,
+				6370E9D01AD47C790053BE6D /* UIKit.framework in Frameworks */,
+				6370E9CE1AD47C6E0053BE6D /* Foundation.framework in Frameworks */,
+				6370E9CC1AD47C5A0053BE6D /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +196,12 @@
 		6370E9101AD4726F0053BE6D = {
 			isa = PBXGroup;
 			children = (
+				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
+				6370E9291AD4726F0053BE6D /* Main.storyboard */,
+				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
+				6370E92C1AD4726F0053BE6D /* Images.xcassets */,
 				6370E91B1AD4726F0053BE6D /* iSoothe */,
+				6370E9CA1AD47C270053BE6D /* Framworks */,
 				6370E9381AD4726F0053BE6D /* iSootheTests */,
 				6370E91A1AD4726F0053BE6D /* Products */,
 			);
@@ -103,11 +221,20 @@
 			children = (
 				6370E9201AD4726F0053BE6D /* AppDelegate.h */,
 				6370E9211AD4726F0053BE6D /* AppDelegate.m */,
-				6370E9291AD4726F0053BE6D /* Main.storyboard */,
-				6370E92C1AD4726F0053BE6D /* Images.xcassets */,
-				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
-				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
+				6370E9A01AD47BDD0053BE6D /* MainControllers */,
+				6370E99C1AD47BB00053BE6D /* ReadingQuotesControllers */,
+				6370E9981AD47B6B0053BE6D /* DrawingControllers */,
+				6370E9911AD47B450053BE6D /* LoadingView */,
+				6370E98A1AD47B230053BE6D /* MusicControllers */,
+				6370E9831AD47AB20053BE6D /* WritingControllers */,
+				6370E9781AD47A810053BE6D /* PhysicalActivityControllers */,
+				6370E96E1AD47A3C0053BE6D /* RatingScreen */,
+				6370E9621AD479A20053BE6D /* LoginControllers */,
+				6370E96A1AD479F70053BE6D /* DBManagers */,
 				6370E9451AD476E10053BE6D /* DBObjects */,
+				6370E9661AD479C30053BE6D /* InternetManager */,
+				6370E95E1AD479770053BE6D /* Toasts */,
+				6370E9C91AD47C0A0053BE6D /* images */,
 				6370E91C1AD4726F0053BE6D /* Supporting Files */,
 			);
 			path = iSoothe;
@@ -158,6 +285,170 @@
 				6370E9471AD477100053BE6D /* Exercises.m */,
 			);
 			name = DBObjects;
+			sourceTree = "<group>";
+		};
+		6370E95E1AD479770053BE6D /* Toasts */ = {
+			isa = PBXGroup;
+			children = (
+				6370E95B1AD479730053BE6D /* UIView+Toast.h */,
+				6370E95C1AD479730053BE6D /* UIView+Toast.m */,
+			);
+			name = Toasts;
+			sourceTree = "<group>";
+		};
+		6370E9621AD479A20053BE6D /* LoginControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E95F1AD4799E0053BE6D /* LoginViewController.h */,
+				6370E9601AD4799E0053BE6D /* LoginViewController.m */,
+			);
+			name = LoginControllers;
+			sourceTree = "<group>";
+		};
+		6370E9661AD479C30053BE6D /* InternetManager */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9631AD479BF0053BE6D /* Reachability.h */,
+				6370E9641AD479BF0053BE6D /* Reachability.m */,
+			);
+			name = InternetManager;
+			sourceTree = "<group>";
+		};
+		6370E96A1AD479F70053BE6D /* DBManagers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9671AD479F30053BE6D /* BackEndComunicator.h */,
+				6370E9681AD479F30053BE6D /* BackEndComunicator.m */,
+			);
+			name = DBManagers;
+			sourceTree = "<group>";
+		};
+		6370E96E1AD47A3C0053BE6D /* RatingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6370E96B1AD47A360053BE6D /* RatingViewController.h */,
+				6370E96C1AD47A360053BE6D /* RatingViewController.m */,
+			);
+			name = RatingScreen;
+			sourceTree = "<group>";
+		};
+		6370E9781AD47A810053BE6D /* PhysicalActivityControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E96F1AD47A790053BE6D /* ExerciseTableViewController.h */,
+				6370E9701AD47A790053BE6D /* ExerciseTableViewController.m */,
+				6370E9711AD47A790053BE6D /* ExerciseTableViewCell.h */,
+				6370E9721AD47A790053BE6D /* ExerciseTableViewCell.m */,
+				6370E9731AD47A790053BE6D /* ExerciseViewController.h */,
+				6370E9741AD47A790053BE6D /* ExerciseViewController.m */,
+			);
+			name = PhysicalActivityControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6370E9831AD47AB20053BE6D /* WritingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9791AD47AAB0053BE6D /* OpenEntriesViewController.h */,
+				6370E97A1AD47AAB0053BE6D /* OpenEntriesViewController.m */,
+				6370E97B1AD47AAB0053BE6D /* JournalViewController.h */,
+				6370E97C1AD47AAB0053BE6D /* JournalViewController.m */,
+				6370E97D1AD47AAB0053BE6D /* OpenEntriesTableViewCell.h */,
+				6370E97E1AD47AAB0053BE6D /* OpenEntriesTableViewCell.m */,
+				6370E97F1AD47AAB0053BE6D /* OpenEntriesViewControllerDelegate.h */,
+			);
+			name = WritingControllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		6370E98A1AD47B230053BE6D /* MusicControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9841AD47B1C0053BE6D /* MusicViewController.h */,
+				6370E9851AD47B1C0053BE6D /* MusicViewController.m */,
+				6370E9861AD47B1C0053BE6D /* MusicTableViewCell.h */,
+				6370E9871AD47B1C0053BE6D /* MusicTableViewCell.m */,
+			);
+			name = MusicControllers;
+			sourceTree = "<group>";
+		};
+		6370E9911AD47B450053BE6D /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				6370E98B1AD47B3F0053BE6D /* RNActivityView.h */,
+				6370E98C1AD47B3F0053BE6D /* RNActivityView.m */,
+				6370E98D1AD47B3F0053BE6D /* UIView+RNActivityView.h */,
+				6370E98E1AD47B3F0053BE6D /* UIView+RNActivityView.m */,
+			);
+			name = LoadingView;
+			sourceTree = "<group>";
+		};
+		6370E9981AD47B6B0053BE6D /* DrawingControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9921AD47B670053BE6D /* SettingsViewController.h */,
+				6370E9931AD47B670053BE6D /* SettingsViewController.m */,
+				6370E9941AD47B670053BE6D /* DrawingViewController.h */,
+				6370E9951AD47B670053BE6D /* DrawingViewController.m */,
+			);
+			name = DrawingControllers;
+			sourceTree = "<group>";
+		};
+		6370E99C1AD47BB00053BE6D /* ReadingQuotesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9991AD47BA50053BE6D /* ReadingViewController.h */,
+				6370E99A1AD47BA50053BE6D /* ReadingViewController.m */,
+			);
+			name = ReadingQuotesControllers;
+			sourceTree = "<group>";
+		};
+		6370E9A01AD47BDD0053BE6D /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6370E99D1AD47BDA0053BE6D /* HomeViewController.h */,
+				6370E99E1AD47BDA0053BE6D /* HomeViewController.m */,
+			);
+			name = MainControllers;
+			sourceTree = "<group>";
+		};
+		6370E9C91AD47C0A0053BE6D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */,
+				6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */,
+				6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */,
+				6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */,
+				6370E9A51AD47BFF0053BE6D /* plank.jpg */,
+				6370E9A61AD47BFF0053BE6D /* backlifts1.jpg */,
+				6370E9A71AD47BFF0053BE6D /* backlifts2.jpg */,
+				6370E9A81AD47BFF0053BE6D /* leglifts3.jpg */,
+				6370E9A91AD47BFF0053BE6D /* crunches3.jpg */,
+				6370E9AA1AD47BFF0053BE6D /* crunches2.jpg */,
+				6370E9AB1AD47BFF0053BE6D /* crunches1.jpg */,
+				6370E9AC1AD47BFF0053BE6D /* sideplank.jpg */,
+				6370E9AD1AD47BFF0053BE6D /* fastforward.png */,
+				6370E9AE1AD47BFF0053BE6D /* thermometer.png */,
+				6370E9AF1AD47BFF0053BE6D /* play.png */,
+				6370E9B01AD47BFF0053BE6D /* pause.png */,
+				6370E9B11AD47BFF0053BE6D /* rewind.png */,
+				6370E9B21AD47BFF0053BE6D /* morning.jpg */,
+				6370E9B31AD47BFF0053BE6D /* afternoon.jpg */,
+				6370E9B41AD47BFF0053BE6D /* evening.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		6370E9CA1AD47C270053BE6D /* Framworks */ = {
+			isa = PBXGroup;
+			children = (
+				6370E9D31AD47C910053BE6D /* MediaPlayer.framework */,
+				6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */,
+				6370E9CF1AD47C790053BE6D /* UIKit.framework */,
+				6370E9CD1AD47C6E0053BE6D /* Foundation.framework */,
+				6370E9CB1AD47C5A0053BE6D /* CoreData.framework */,
+			);
+			name = Framworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +531,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6370E9BE1AD47BFF0053BE6D /* crunches2.jpg in Resources */,
+				6370E9B51AD47BFF0053BE6D /* doubleMusicNote.png in Resources */,
+				6370E9C71AD47BFF0053BE6D /* afternoon.jpg in Resources */,
+				6370E9C01AD47BFF0053BE6D /* sideplank.jpg in Resources */,
+				6370E9B61AD47BFF0053BE6D /* leglifts1.jpg in Resources */,
 				6370E92B1AD4726F0053BE6D /* Main.storyboard in Resources */,
+				6370E9C11AD47BFF0053BE6D /* fastforward.png in Resources */,
+				6370E9B71AD47BFF0053BE6D /* backlifts3.jpg in Resources */,
+				6370E9BC1AD47BFF0053BE6D /* leglifts3.jpg in Resources */,
 				6370E9301AD4726F0053BE6D /* LaunchScreen.xib in Resources */,
+				6370E9BD1AD47BFF0053BE6D /* crunches3.jpg in Resources */,
 				6370E92D1AD4726F0053BE6D /* Images.xcassets in Resources */,
+				6370E9C31AD47BFF0053BE6D /* play.png in Resources */,
+				6370E9BB1AD47BFF0053BE6D /* backlifts2.jpg in Resources */,
+				6370E9C41AD47BFF0053BE6D /* pause.png in Resources */,
+				6370E9BF1AD47BFF0053BE6D /* crunches1.jpg in Resources */,
+				6370E9C21AD47BFF0053BE6D /* thermometer.png in Resources */,
+				6370E9C81AD47BFF0053BE6D /* evening.jpg in Resources */,
+				6370E9B91AD47BFF0053BE6D /* plank.jpg in Resources */,
+				6370E9B81AD47BFF0053BE6D /* leglifts2.jpg in Resources */,
+				6370E9C51AD47BFF0053BE6D /* rewind.png in Resources */,
+				6370E9C61AD47BFF0053BE6D /* morning.jpg in Resources */,
+				6370E9BA1AD47BFF0053BE6D /* backlifts1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,16 +571,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6370E9771AD47A790053BE6D /* ExerciseViewController.m in Sources */,
+				6370E9651AD479BF0053BE6D /* Reachability.m in Sources */,
 				6370E95A1AD477110053BE6D /* Activities.m in Sources */,
 				6370E94B1AD477110053BE6D /* Journal.m in Sources */,
+				6370E96D1AD47A360053BE6D /* RatingViewController.m in Sources */,
 				6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */,
+				6370E99F1AD47BDA0053BE6D /* HomeViewController.m in Sources */,
+				6370E9761AD47A790053BE6D /* ExerciseTableViewCell.m in Sources */,
 				6370E9541AD477110053BE6D /* Therapist.m in Sources */,
+				6370E9881AD47B1C0053BE6D /* MusicViewController.m in Sources */,
 				6370E9571AD477110053BE6D /* Patient.m in Sources */,
+				6370E9751AD47A790053BE6D /* ExerciseTableViewController.m in Sources */,
+				6370E99B1AD47BA50053BE6D /* ReadingViewController.m in Sources */,
+				6370E9901AD47B3F0053BE6D /* UIView+RNActivityView.m in Sources */,
+				6370E98F1AD47B3F0053BE6D /* RNActivityView.m in Sources */,
+				6370E95D1AD479730053BE6D /* UIView+Toast.m in Sources */,
+				6370E9801AD47AAB0053BE6D /* OpenEntriesViewController.m in Sources */,
+				6370E9811AD47AAB0053BE6D /* JournalViewController.m in Sources */,
 				6370E9481AD477100053BE6D /* Exercises.m in Sources */,
+				6370E9971AD47B670053BE6D /* DrawingViewController.m in Sources */,
 				6370E94E1AD477110053BE6D /* ButtonActivations.m in Sources */,
+				6370E9891AD47B1C0053BE6D /* MusicTableViewCell.m in Sources */,
+				6370E9691AD479F30053BE6D /* BackEndComunicator.m in Sources */,
+				6370E9611AD4799E0053BE6D /* LoginViewController.m in Sources */,
 				6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */,
 				6370E9511AD477110053BE6D /* Quotes.m in Sources */,
 				6370E91F1AD4726F0053BE6D /* main.m in Sources */,
+				6370E9821AD47AAB0053BE6D /* OpenEntriesTableViewCell.m in Sources */,
+				6370E9961AD47B670053BE6D /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +628,7 @@
 				6370E92A1AD4726F0053BE6D /* Base */,
 			);
 			name = Main.storyboard;
+			path = iSoothe;
 			sourceTree = "<group>";
 		};
 		6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */ = {
@@ -306,6 +637,7 @@
 				6370E92F1AD4726F0053BE6D /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = iSoothe;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -478,7 +810,8 @@
 				6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */,
 			);
 			currentVersion = 6370E9241AD4726F0053BE6D /* iSoothe.xcdatamodel */;
-			path = iSoothe.xcdatamodeld;
+			name = iSoothe.xcdatamodeld;
+			path = iSoothe/iSoothe.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

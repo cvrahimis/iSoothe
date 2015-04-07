@@ -13,12 +13,126 @@
 @end
 
 @implementation AppDelegate
-
+@synthesize exerciseNames;
+@synthesize exerciseImgs;
+@synthesize mainImg;
+@synthesize exercise;
+@synthesize quotes;
+@synthesize authors;
+@synthesize bec;
+@synthesize viewController;
+@synthesize exerciseDesc;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Exercises" inManagedObjectContext:[self managedObjectContext]];
+    [fetchRequest setEntity:entity];
+    NSError *error = nil;
+    NSArray *fetchedObjects = [_managedObjectContext executeFetchRequest:fetchRequest error: &error];
+    
+    if (fetchedObjects.count == 0) {
+        exerciseNames = @[@"Back lifts", @"Crunches", @"Leg lifts", @"Planks"];
+        exerciseImgs= @[@"backlifts1.jpg|backlifts2.jpg", @"crunches1.jpg|crunches2.jpg|crunches3.jpg", @"leglifts1.jpg|leglifts2.jpg|leglifts3.jpg", @"plank.jpg|sideplank.jpg"];
+        mainImg = @[@"backlifts1.jpg", @"crunches1.jpg", @"leglifts1.jpg", @"plank.jpg"];
+        exerciseDesc = @[@"Lay down on your stomach and lift your hands and feet off the ground", @"Lay down on you back and use your abdominal muscles to lift your torso up", @"Lay down on you back and lift your feet into the air", @"Use your forearms and feet to keep your body off the ground"];
+        [self setUpExerciseTable];
+    }
+    
+    fetchRequest = [[NSFetchRequest alloc] init];
+    entity = [NSEntityDescription entityForName:@"Quotes" inManagedObjectContext:[self managedObjectContext]];
+    [fetchRequest setEntity:entity];
+    error = nil;
+    fetchedObjects = [_managedObjectContext executeFetchRequest:fetchRequest error: &error];
+    
+    if (fetchedObjects.count == 0) {
+        quotes = @[@"\"You have a brain in your head. You have feet in your shoes.  You can steer yourself any direction you choose!\"",
+                   @"\"If you can dream it, you can do it\"",
+                   @"\"You can search throughout the entire universe for someone who is more deserving of your love and affection than you are yourself, and that person is not to be found anywhere.  You yourself, as much as anybody in the entire universe deserve your love and affection.\"",
+                   @"\"Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.\"",
+                   @"\"Go confidently in the direction of your dreams. Live the life you have imagined.\"",
+                   @"\"What you think you become. What you feel you attract. What you imagine you create.\"",
+                   @"\"Believe you can and you’re halfway there.\"",
+                   @"\"To love oneself is the beginning of a lifelong romance.\"",
+                   @"\"Look for goodness in others, for beauty in the world, and for possibilities in yourself.\"",
+                   @"\"What lies behind us and what lies before us are tiny matters compared to what lies within us.\"",
+                   @"\"Only as high as I reach can I grow, only as far as I seek can I go, only as deep as I look can I see, only as much as I dream can I be.\"",
+                   @"\"You have to be unique, and different, and shine in your own way.\"",
+                   @"\"The mind is everything. What you think you become.\"",
+                   @"\"Who looks outside, dreams. Who looks inside, awakes.\"",
+                   @"\"The mind is everything.  What you think you become.\"",
+                   @"\"You must expect great things of yourself before you can do them.\"",
+                   @"\"Be happy in the moment, that’s enough. Each moment is all we need, not more.\"",
+                   @"\"The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.\"",
+                   @"\"Nothing is impossible, the word itself says 'I'm possible'!\"",
+                   @"\"There are far, far better things ahead than any we leave behind.\"",
+                   @"\"Just keep swimming\"",
+                   @"\"The power for creating a better future is contained in the present moment; you create a good future by creating a good present.\"",
+                   @"\"There is no way to happiness, happiness is the way.\"",
+                   @"\"If you want others to be happy, practice compassion.  If you want to be happy, practice compassion.\""];
+        authors = @[@"–Dr. Seuss", @"–Walt Disney", @"–Buddha", @"–Buddha",@"–Henry David Thoreau",
+                    @"-Buddha", @"–Theodore Roosevelt", @"–Oscar Wilde", @"–Wes Fessler", @"–Ralph Waldo Emerson",
+                    @"–Karen Ravn", @"–Lady Gage", @"–Buddha", @"–Carl Jung", @"–Buddha",
+                    @"-Michael Jordan", @"–Mother Teresa", @"–Helen Keller", @"–Audrey Hepburn", @"–Ralph Waldo Emerson",
+                    @"–Finding Nemo", @"–Eckhart Tolle", @"–Thich Nhat Hanh", @"–Dalai Lama"];
+        [self setUpQuotesTable];
+    }
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    bec = [[BackEndComunicator alloc] initWithManagedObjectContext:_managedObjectContext];
+    if ([bec isPatientAndTherapistOnDevice])
+        self.viewController = [[RatingViewController alloc] init];
+    else
+        self.viewController = [[LoginViewController alloc] init];
+    
+    //self.viewController = [[RatingViewController alloc] init];//debug
+    
+    self.navCtrl = [[UINavigationController alloc] initWithRootViewController: self.viewController];
+    //[self.navCtrl setNavigationBarHidden:NO animated:YES];
+    self.navCtrl.delegate = self.viewController;
+    [self.window 	setRootViewController: self.navCtrl];
+    self.window.userInteractionEnabled = YES;
+    [self.window makeKeyAndVisible];
+    
+    [[UIApplication sharedApplication] setStatusBarHidden: YES];
+    
     return YES;
 }
+
+-(void)setUpQuotesTable{
+    for (int i = 0; i < [quotes count]; i++)
+    {
+        quote = [NSEntityDescription insertNewObjectForEntityForName: @"Quotes" inManagedObjectContext: _managedObjectContext];
+        [quote setValue:quotes[i] forKey:@"quote"];
+        [quote setValue:authors[i] forKey:@"author"];
+        
+        NSError *error = nil;
+        if([_managedObjectContext save: &error])
+        {
+            NSLog(@"%@", [@"Successsfully added " stringByAppendingString:quotes[i]]);
+        }
+    }
+}
+
+
+-(void)setUpExerciseTable{
+    for (int i = 0; i < [exerciseNames count]; i++)
+    {
+        exercise = [NSEntityDescription insertNewObjectForEntityForName: @"Exercises" inManagedObjectContext: _managedObjectContext];
+        [exercise setValue:exerciseNames[i] forKey:@"exerciseName"];
+        [exercise setValue:exerciseImgs[i] forKey:@"pictures"];
+        [exercise setValue:mainImg[i] forKey:@"mainPicture"];
+        [exercise setValue:exerciseDesc[i] forKey:@"descriptions"];
+        
+        NSError *error = nil;
+        if([_managedObjectContext save: &error])
+        {
+            NSLog(@"%@", [@"Successsfully added " stringByAppendingString:exerciseNames[i]]);
+        }
+    }
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -42,6 +156,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
++(AppDelegate*)sharedAppdelegate
+{
+    return (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
 #pragma mark - Core Data stack
