@@ -146,7 +146,7 @@
         [self.view addSubview:doneBtn];
         [self.view bringSubviewToFront:doneBtn];
         
-        section = (frameWidth * .722) / 9;
+        section = (frameWidth * .722) / 10;
         urge = floor(mesurmentView.frame.size.width / section) + 1;
         
         swiped = NO;

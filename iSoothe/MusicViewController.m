@@ -14,14 +14,8 @@
 
 @synthesize playButton, rewind, fastforward;
 @synthesize volume;
-//@synthesize songTitle;
-//@synthesize artist;
-//@synthesize album;
-//@synthesize albumCover;
-//@synthesize showMediaPicker;
 @synthesize currentPosition;
 @synthesize background;
-//@synthesize songInfo;
 @synthesize duration;
 @synthesize musicPlayer;
 @synthesize startTime;
@@ -76,63 +70,6 @@
         [self.view addSubview:containerView];
         
         pickedSongs = [[NSArray alloc] init];
-        
-        
-        /*currentPosition = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .7, 30)];//initWithProgressViewStyle: UIProgressViewStyleDefault];
-         currentPosition.center = CGPointMake(frameWidth / 2, frameHeight * .75);
-         [self.view addSubview: currentPosition];
-         */
-        
-        /*songInfo = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth, frameHeight * .2)];
-        songInfo.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.2];
-        songInfo.center = CGPointMake(frameWidth * .5, frameHeight * .65);
-        //songInfo.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview:songInfo];
-        
-        songTitle = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, frameWidth, frameHeight * .5)];
-        songTitle.center = CGPointMake(self.songInfo.bounds.size.width * .5, self.songInfo.bounds.size.height * .2);
-        songTitle.text = @"Title: ";
-        songTitle.textAlignment = NSTextAlignmentCenter;
-        songTitle.font = [UIFont fontWithName: @"Helvetica" size: 20];
-        songTitle.textColor = [UIColor whiteColor];
-        [songInfo addSubview: songTitle];
-        
-        artist = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, frameWidth, frameHeight * .2)];
-        artist.center = CGPointMake(self.songInfo.bounds.size.width * .5, self.songInfo.bounds.size.height * .4);
-        artist.text = @"Artist: ";
-        artist.textAlignment = NSTextAlignmentCenter;
-        artist.font = [UIFont fontWithName: @"Helvetica" size: 20];
-        artist.textColor = [UIColor whiteColor];
-        [songInfo addSubview: artist];
-        
-        album = [[UILabel alloc] initWithFrame: CGRectMake(0, 0, frameWidth, frameHeight * .6)];
-        album.center = CGPointMake(self.songInfo.bounds.size.width * .5, self.songInfo.bounds.size.height * .6);
-        album.text = @"Album: ";
-        album.textAlignment = NSTextAlignmentCenter;
-        
-        album.font = [UIFont fontWithName: @"Helvetica" size: 20];
-        album.textColor = [UIColor whiteColor];
-        [songInfo addSubview: album];
-        */
-        /*showMediaPicker = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-        showMediaPicker.frame = CGRectMake(0, 0, frameWidth*.6, frameHeight * .05);
-        showMediaPicker.center = CGPointMake(frameWidth * .5, frameHeight * .5);
-        showMediaPicker.opaque = YES;
-        showMediaPicker.layer.cornerRadius = 12;
-        showMediaPicker.clipsToBounds = YES;
-        showMediaPicker.backgroundColor = [UIColor blueColor];
-        showMediaPicker.tintColor = [UIColor whiteColor];
-        [showMediaPicker setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
-        [showMediaPicker.titleLabel setFont:[UIFont systemFontOfSize: 22]];
-        [showMediaPicker setTitle:@"Show Media Picker" forState:UIControlStateNormal];
-        [showMediaPicker addTarget:self action:@selector(showMediaPicker:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview: showMediaPicker];*/
-        
-       /* albumCover = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .6, frameHeight * .3)];
-        albumCover.center = CGPointMake(frameWidth /2, frameHeight * .3);
-        //albumCover.image = [UIImage imageNamed:@"bluredDumbBells.png"];
-        //albumCover.backgroundColor = [UIColor whiteColor];
-        [self.view addSubview: albumCover];*/
         
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                                  initWithTitle:@"Done"
@@ -333,7 +270,7 @@
     mediaPicker.delegate = self;
     mediaPicker.allowsPickingMultipleItems = YES;
     mediaPicker.prompt = @"Select songs to play";
-    
+    self.musicTableView.delegate = self;
     [self presentViewController:mediaPicker animated:YES completion:nil];
     mediaPicker = nil;
 }
@@ -345,15 +282,41 @@
     {
         [musicPlayer setQueueWithItemCollection: mediaItemCollection];
         pickedSongs = mediaItemCollection.items;
-        //musicTableView.delegate = self;
+        
+        /*NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
+        [allSongs setEntity:[NSEntityDescription entityForName:@"Music" inManagedObjectContext:managedObjectContext]];
+        [allSongs setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+        
+        NSError * error = nil;
+        NSArray * dbSongs = [managedObjectContext executeFetchRequest:allSongs error:&error];
+        allSongs = nil;
+        //error handling goes here
+        for (NSManagedObject * song in dbSongs) {
+            [managedObjectContext deleteObject:song];
+        }
+        error = nil;
+        [managedObjectContext save:&error];
+        for(int i = 0; i < [pickedSongs count]; i++)
+        {
+            Music *music;
+            music = [NSEntityDescription insertNewObjectForEntityForName: @"Music" inManagedObjectContext: managedObjectContext];
+            NSNumber* persistentID = [(MPMediaItem*)pickedSongs[i] valueForProperty:[MPMediaItem persistentIDPropertyForGroupingType: MPMediaGroupingTitle]];
+            [music setValue: persistentID forKey:@"song"];
+            error = nil;
+            if([managedObjectContext save: &error])
+            {
+                NSLog(@"Successsfully added song");
+            }
+        }*/
+        musicTableView.delegate = self;
+        musicTableView.dataSource = self;
         [self.musicTableView reloadData];
-        [musicPlayer play];
+        //[musicPlayer play];
     }
     
     [self dismissViewControllerAnimated: YES completion:nil];
     
 }
-
 
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
 {
@@ -468,7 +431,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__PRETTY_FUNCTION__);
+    [musicPlayer pause];
     
+    MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
+    NSString *currentTitle = [currentItem valueForProperty:MPMediaItemPropertyTitle];
+    NSString *currentArtist = [currentItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+    
+    MPMediaItem *desiredItem = [pickedSongs objectAtIndex:indexPath.row];
+    NSString *desiredTitle = [desiredItem valueForProperty:MPMediaItemPropertyTitle];
+    NSString *desiredArtist = [desiredItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+    
+    [musicPlayer skipToBeginning];
+    
+    for(MPMediaItem *song in pickedSongs)
+    {
+        currentTitle = [song valueForProperty:MPMediaItemPropertyTitle];
+        currentArtist = [song valueForProperty:MPMediaItemPropertyAlbumArtist];
+        if([currentTitle isEqualToString:desiredTitle] && ([currentArtist isEqualToString:desiredArtist] || (!currentArtist && !desiredArtist)))
+        {
+            musicPlayer.nowPlayingItem = song;
+            break;
+        }
+    }
+    
+    [musicPlayer play];
     
 }
 
