@@ -28,23 +28,26 @@
         playButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, frameWidth * .4, frameWidth * .4)];
         playButton.center = CGPointMake(frameWidth / 2, frameHeight * .9);
         [playButton setImage: [UIImage imageNamed: @"play.png"] forState: UIControlStateNormal];
+        playButton.enabled = NO;
         [playButton addTarget: self action:@selector(playPause:) forControlEvents: UIControlEventTouchDown];
         [self.view addSubview: playButton];
         
         fastforward = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, frameWidth * .4, frameWidth * .4)];
         fastforward.center = CGPointMake(frameWidth * .8, frameHeight * .9);
         [fastforward setImage: [UIImage imageNamed: @"fastforward.png"] forState: UIControlStateNormal];
+        fastforward.enabled = NO;
         [fastforward addTarget: self action:@selector(nextSong:) forControlEvents: UIControlEventTouchDown];
         [self.view addSubview: fastforward];
         
         rewind = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, frameWidth * .4, frameWidth * .4)];
         rewind.center = CGPointMake(frameWidth * .2, frameHeight * .9);
         [rewind setImage: [UIImage imageNamed: @"rewind.png"] forState: UIControlStateNormal];
+        rewind.enabled = NO;
         [rewind addTarget: self action:@selector(previousSong:) forControlEvents: UIControlEventTouchDown];
         [self.view addSubview: rewind];
         
         volume = [[UISlider alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .7, 30)];
-        volume.center = CGPointMake(frameWidth / 2, frameHeight * .8);
+        volume.center = CGPointMake(frameWidth / 2, frameHeight * .75);
         volume.backgroundColor = [UIColor clearColor];
         volume.minimumValue = 0.0f;
         volume.maximumValue = 1.0f;
@@ -53,10 +56,10 @@
         [volume addTarget:self action:@selector(volumeChanged:) forControlEvents:UIControlEventValueChanged];
         [self.view addSubview: volume];
         
-        containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .8, frameHeight * .5)];
+        containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .9, frameHeight * .5)];
         containerView.center = CGPointMake(frameWidth / 2, frameHeight * .4);
         
-        musicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .8, frameHeight * .5)];
+        musicTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .9, frameHeight * .5)];
         musicTableView.dataSource = self;
         [containerView addSubview: musicTableView];
         [self.view addSubview:containerView];
@@ -383,23 +386,22 @@
 - (IBAction)previousSong:(id)sender
 {
     [musicPlayer skipToPreviousItem];
+    [self.musicTableView reloadData];
 }
 
 - (IBAction)playPause:(id)sender
 {
-    if ([musicPlayer playbackState] == MPMusicPlaybackStatePlaying) {
+    if ([musicPlayer playbackState] == MPMusicPlaybackStatePlaying)
         [musicPlayer pause];
-        //MPMediaItem *mediaItem;
-    }
     else
-    {
         [musicPlayer play];
-    }
+    [self.musicTableView reloadData];
 }
 
 - (IBAction)nextSong:(id)sender
 {
     [musicPlayer skipToNextItem];
+    [self.musicTableView reloadData];
 }
 
 -(long) Time {
@@ -472,6 +474,25 @@
     MPMediaItem *currentItem = [savedSongs objectAtIndex:indexPath.row];
     if(currentItem)
     {
+        if ([musicPlayer playbackState] == MPMusicPlaybackStatePlaying)
+        {
+            MPMediaItem *nowPlaying = musicPlayer.nowPlayingItem;
+            if (([currentItem.itemTitle isEqualToString:nowPlaying.itemTitle] && [currentItem.itemArtist isEqualToString:nowPlaying.itemArtist]) || ([currentItem.itemTitle isEqualToString:nowPlaying.itemTitle] && (!currentItem.itemArtist && !nowPlaying.itemArtist))) {
+                cell.backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+                cell.backgroundView.backgroundColor = [UIColor lightGrayColor];
+            }
+            else
+            {
+                cell.backgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+                cell.backgroundView.backgroundColor = [UIColor whiteColor];
+            }
+        }
+        else
+        {
+            cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.bounds];
+            cell.selectedBackgroundView.backgroundColor = [UIColor lightGrayColor];
+        }
+        
         MPMediaItemArtwork *artwork = currentItem.itemArtwork;
         if(!artwork)
             cell.imageView.image = [self imageWithImage:[UIImage imageNamed:@"musicalNotes.png"] scaledToSize:CGSizeMake (frameWidth * .2, frameWidth * .2)];
@@ -489,6 +510,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [musicPlayer pause];
+    playButton.enabled = YES;
+    rewind.enabled = YES;
+    fastforward.enabled = YES;
     
     if([musicPlayer playbackState] == MPMusicPlaybackStatePaused || [musicPlayer playbackState] == MPMusicPlaybackStateStopped)
         musicPlayer.nowPlayingItem = [savedSongs objectAtIndex:0];
