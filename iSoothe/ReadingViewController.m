@@ -24,7 +24,7 @@
     [super viewDidLoad];
     
     backTint = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth, frameHeight)];
-    backTint.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.2];
+    backTint.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.15];
     [self.view addSubview:backTint];
     [self.view sendSubviewToBack:backTint];
     [self.view sendSubviewToBack:background];
@@ -46,9 +46,9 @@
 }
 
 -(void) initBackground {
-    if (currentTime < 12) background.image = [UIImage imageNamed:@"Morning"];
-    else if (currentTime > 12 && currentTime < 18) background.image = [UIImage imageNamed:@"Afternoon"];
-    else background.image = [UIImage imageNamed:@"Evening"];
+    if (currentTime < 12) background.image = [UIImage imageNamed:@"morning.jpg"];
+    else if (currentTime > 12 && currentTime < 18) background.image = [UIImage imageNamed:@"afternoon.jpg"];
+    else background.image = [UIImage imageNamed:@"evening.jpg"];
 }
 
 -(void) initQuotes {
