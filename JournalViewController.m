@@ -39,16 +39,15 @@
         [self.scrollView addGestureRecognizer:singleTap];
         [self.view addSubview:scrollView];
         
-        titleTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth * .6, frameHeight *.08)];
+        titleTF = [[UITextField alloc] initWithFrame: CGRectMake(frameWidth * .05, frameHeight * .05, frameWidth * .6, frameHeight *.08)];
         titleTF.placeholder = @"Title";
         titleTF.backgroundColor = [UIColor whiteColor];
         titleTF.layer.borderWidth = 0.5f;
         titleTF.layer.borderColor = [[UIColor blackColor] CGColor];
         titleTF.delegate = self;
-        titleTF.center = CGPointMake(frameWidth / 2, frameHeight * .1);
         [scrollView addSubview:titleTF];
         
-        entryTV = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .7, frameHeight * .4)];
+        entryTV = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .9, frameHeight * .4)];
         entryTV.center = CGPointMake(frameWidth / 2, frameHeight * .35);
         entryTV.selectedRange = NSMakeRange(0, 0);
         entryTV.layer.borderWidth = 0.5f;
@@ -56,10 +55,8 @@
         entryTV.delegate = self;
         [scrollView addSubview:entryTV];
         
-        saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, frameWidth * .27, frameHeight * .07)];
-        saveBtn.center = CGPointMake(frameWidth /2, frameHeight * .65);
+        saveBtn = [[UIButton alloc] initWithFrame:CGRectMake(frameWidth * .05 + frameWidth * .6, frameHeight * .05, frameWidth * .3, frameHeight * .08)];
         saveBtn.backgroundColor = [UIColor blueColor];
-        saveBtn.layer.cornerRadius = 10;
         saveBtn.layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
         saveBtn.showsTouchWhenHighlighted = YES;
         [saveBtn setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
@@ -206,7 +203,6 @@
 }
 - (BOOL) textFieldShouldReturn: (UITextField *) txtField {
     [txtField resignFirstResponder];
-    [entryTV becomeFirstResponder];
     return NO;
 }
 
