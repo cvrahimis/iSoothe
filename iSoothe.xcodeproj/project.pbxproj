@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6334C6CE1AD61433004D9293 /* MPMediaItem+Accessors.m in Sources */ = {isa = PBXBuildFile; fileRef = 6334C6CD1AD61433004D9293 /* MPMediaItem+Accessors.m */; };
+		6334C6D71AD6290C004D9293 /* Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 6334C6D61AD6290C004D9293 /* Music.m */; };
+		6334C6D91AD62F76004D9293 /* musicalNotes.png in Resources */ = {isa = PBXBuildFile; fileRef = 6334C6D81AD62F76004D9293 /* musicalNotes.png */; };
 		6370E91F1AD4726F0053BE6D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E91E1AD4726F0053BE6D /* main.m */; };
 		6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9211AD4726F0053BE6D /* AppDelegate.m */; };
 		6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */; };
@@ -78,6 +81,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6334C6CC1AD61433004D9293 /* MPMediaItem+Accessors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMediaItem+Accessors.h"; sourceTree = "<group>"; };
+		6334C6CD1AD61433004D9293 /* MPMediaItem+Accessors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMediaItem+Accessors.m"; sourceTree = "<group>"; };
+		6334C6D51AD6290C004D9293 /* Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Music.h; sourceTree = "<group>"; };
+		6334C6D61AD6290C004D9293 /* Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Music.m; sourceTree = "<group>"; };
+		6334C6D81AD62F76004D9293 /* musicalNotes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicalNotes.png; sourceTree = "<group>"; };
 		6370E9191AD4726F0053BE6D /* iSoothe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSoothe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6370E91D1AD4726F0053BE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6370E91E1AD4726F0053BE6D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -283,6 +291,8 @@
 				6370E94A1AD477110053BE6D /* Journal.m */,
 				6370E9461AD477100053BE6D /* Exercises.h */,
 				6370E9471AD477100053BE6D /* Exercises.m */,
+				6334C6D51AD6290C004D9293 /* Music.h */,
+				6334C6D61AD6290C004D9293 /* Music.m */,
 			);
 			name = DBObjects;
 			sourceTree = "<group>";
@@ -368,6 +378,8 @@
 				6370E9851AD47B1C0053BE6D /* MusicViewController.m */,
 				6370E9861AD47B1C0053BE6D /* MusicTableViewCell.h */,
 				6370E9871AD47B1C0053BE6D /* MusicTableViewCell.m */,
+				6334C6CC1AD61433004D9293 /* MPMediaItem+Accessors.h */,
+				6334C6CD1AD61433004D9293 /* MPMediaItem+Accessors.m */,
 			);
 			name = MusicControllers;
 			sourceTree = "<group>";
@@ -415,6 +427,7 @@
 		6370E9C91AD47C0A0053BE6D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6334C6D81AD62F76004D9293 /* musicalNotes.png */,
 				6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */,
 				6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */,
 				6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */,
@@ -549,6 +562,7 @@
 				6370E9BF1AD47BFF0053BE6D /* crunches1.jpg in Resources */,
 				6370E9C21AD47BFF0053BE6D /* thermometer.png in Resources */,
 				6370E9C81AD47BFF0053BE6D /* evening.jpg in Resources */,
+				6334C6D91AD62F76004D9293 /* musicalNotes.png in Resources */,
 				6370E9B91AD47BFF0053BE6D /* plank.jpg in Resources */,
 				6370E9B81AD47BFF0053BE6D /* leglifts2.jpg in Resources */,
 				6370E9C51AD47BFF0053BE6D /* rewind.png in Resources */,
@@ -596,6 +610,8 @@
 				6370E9691AD479F30053BE6D /* BackEndComunicator.m in Sources */,
 				6370E9611AD4799E0053BE6D /* LoginViewController.m in Sources */,
 				6370E9251AD4726F0053BE6D /* iSoothe.xcdatamodeld in Sources */,
+				6334C6CE1AD61433004D9293 /* MPMediaItem+Accessors.m in Sources */,
+				6334C6D71AD6290C004D9293 /* Music.m in Sources */,
 				6370E9511AD477110053BE6D /* Quotes.m in Sources */,
 				6370E91F1AD4726F0053BE6D /* main.m in Sources */,
 				6370E9821AD47AAB0053BE6D /* OpenEntriesTableViewCell.m in Sources */,

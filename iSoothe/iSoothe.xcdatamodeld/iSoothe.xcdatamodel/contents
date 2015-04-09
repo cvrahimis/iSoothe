@@ -31,6 +31,11 @@
         <attribute name="entry" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Music" representedClassName="Music" syncable="YES">
+        <attribute name="artist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="duration" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Patient" representedClassName="Patient" syncable="YES">
         <attribute name="patientFirstName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="patientId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -55,12 +60,13 @@
         <relationship name="patient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="therapist" inverseEntity="Patient" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Therapist" positionX="-45" positionY="-277" width="128" height="133"/>
-        <element name="Quotes" positionX="225" positionY="-406" width="128" height="73"/>
-        <element name="Patient" positionX="594" positionY="38" width="128" height="178"/>
-        <element name="Journal" positionX="-200" positionY="-405" width="128" height="88"/>
-        <element name="Exercises" positionX="27" positionY="-405" width="128" height="103"/>
-        <element name="ButtonActivations" positionX="169" positionY="-90" width="128" height="133"/>
         <element name="Activities" positionX="-279" positionY="-27" width="128" height="193"/>
+        <element name="ButtonActivations" positionX="169" positionY="-90" width="128" height="133"/>
+        <element name="Exercises" positionX="27" positionY="-405" width="128" height="103"/>
+        <element name="Journal" positionX="-200" positionY="-405" width="128" height="88"/>
+        <element name="Music" positionX="412" positionY="-207" width="128" height="90"/>
+        <element name="Patient" positionX="594" positionY="38" width="128" height="178"/>
+        <element name="Quotes" positionX="225" positionY="-406" width="128" height="73"/>
+        <element name="Therapist" positionX="-45" positionY="-277" width="128" height="133"/>
     </elements>
 </model>

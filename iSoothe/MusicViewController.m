@@ -12,18 +12,8 @@
 
 @implementation MusicViewController
 
-@synthesize playButton, rewind, fastforward;
-@synthesize volume;
-@synthesize currentPosition;
-@synthesize background;
-@synthesize duration;
-@synthesize musicPlayer;
-@synthesize startTime;
-@synthesize endTime;
-@synthesize showMusic;
-@synthesize containerView;
-@synthesize musicTableView;
-@synthesize pickedSongs;
+@synthesize playButton, rewind, fastforward, volume, currentPosition, background, musicPlayer, startTime, endTime, showMusic;
+@synthesize containerView, musicTableView, pickedSongs, savedSongs, managedObjectContext;
 
 -(id)init{
     if(self = [super init])
@@ -32,6 +22,8 @@
         [self initBackground];
         
         startTime = [NSDate date];
+        
+        musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
         
         playButton = [[UIButton alloc] initWithFrame: CGRectMake(0, 0, frameWidth * .4, frameWidth * .4)];
         playButton.center = CGPointMake(frameWidth / 2, frameHeight * .9);
@@ -70,6 +62,7 @@
         [self.view addSubview:containerView];
         
         pickedSongs = [[NSArray alloc] init];
+        savedSongs = [[NSMutableArray alloc] init];
         
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                                  initWithTitle:@"Done"
@@ -88,6 +81,54 @@
         //[showMusic setBackgroundImage:addBkg forState:UIControlStateNormal barMetrics:0];
         self.navigationItem.rightBarButtonItem = showMusic;
         
+        AppDelegate* appDelegate = [AppDelegate sharedAppdelegate];
+        managedObjectContext = appDelegate.managedObjectContext;
+        
+        NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
+        [allSongs setEntity:[NSEntityDescription entityForName:@"Music" inManagedObjectContext:managedObjectContext]];
+        [allSongs setIncludesPropertyValues:NO]; //only fetch the managedObjectID
+        
+        NSError * error = nil;
+        NSArray *results = [managedObjectContext executeFetchRequest:allSongs error:&error];
+        if ([results count] > 0) {
+        
+            for(int i = 0; i < [results count]; i++)
+            {
+                Music *music = results[i];
+                /*MPMediaPropertyPredicate *durationPredicate = nil;
+                if (![[music valueForKey:@"artist"] isEqualToString:@""])
+                    durationPredicate = [MPMediaPropertyPredicate predicateWithValue:[music valueForKey:@"duration"]
+                                                                       forProperty:MPMediaItemPropertyPlaybackDuration
+                                                                    comparisonType:MPMediaPredicateComparisonContains];
+                */
+            
+                MPMediaPropertyPredicate *titlePredicate =
+                [MPMediaPropertyPredicate predicateWithValue:[music valueForKey:@"title"]
+                                                 forProperty:MPMediaItemPropertyTitle
+                                              comparisonType:MPMediaPredicateComparisonEqualTo];
+                
+                MPMediaQuery *songsQuery = [[MPMediaQuery alloc] init];
+                //if (![[music valueForKey:@"artist"] isEqualToString:@""])
+                    //[songsQuery addFilterPredicate:durationPredicate];
+                [songsQuery addFilterPredicate:titlePredicate];
+            
+                NSArray *songs = [songsQuery items];
+                for(MPMediaItem *song in songs)
+                {
+                    if ([song.itemPlaybackDuration intValue] == [[music valueForKey:@"duration"] intValue] && ((!song.itemArtist && [[music valueForKey:@"artist"] isEqualToString:@"(null)"]) || [song.itemArtist isEqualToString:[music valueForKey:@"artist"]]))
+                    {
+                        [savedSongs insertObject:song atIndex:[savedSongs count]];
+                    }
+                }
+            }
+        
+            MPMediaItemCollection *mediaCollection = [[MPMediaItemCollection alloc] initWithItems:[NSArray arrayWithArray:savedSongs]];
+            [musicPlayer setQueueWithItemCollection:mediaCollection];
+        }
+        musicTableView.delegate = self;
+        musicTableView.dataSource = self;
+        [self.musicTableView reloadData];
+        
     }
     return self;
 }
@@ -95,8 +136,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     
     [volume setValue:[musicPlayer volume]];
     
@@ -280,10 +319,12 @@
 {
     if (mediaItemCollection)
     {
+        [savedSongs removeAllObjects];
         [musicPlayer setQueueWithItemCollection: mediaItemCollection];
         pickedSongs = mediaItemCollection.items;
+        savedSongs = [NSMutableArray arrayWithArray: pickedSongs];
         
-        /*NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
+        NSFetchRequest * allSongs = [[NSFetchRequest alloc] init];
         [allSongs setEntity:[NSEntityDescription entityForName:@"Music" inManagedObjectContext:managedObjectContext]];
         [allSongs setIncludesPropertyValues:NO]; //only fetch the managedObjectID
         
@@ -298,16 +339,26 @@
         [managedObjectContext save:&error];
         for(int i = 0; i < [pickedSongs count]; i++)
         {
-            Music *music;
-            music = [NSEntityDescription insertNewObjectForEntityForName: @"Music" inManagedObjectContext: managedObjectContext];
-            NSNumber* persistentID = [(MPMediaItem*)pickedSongs[i] valueForProperty:[MPMediaItem persistentIDPropertyForGroupingType: MPMediaGroupingTitle]];
-            [music setValue: persistentID forKey:@"song"];
+            MPMediaItem *item = pickedSongs[i];
+            Music *music = [NSEntityDescription insertNewObjectForEntityForName: @"Music" inManagedObjectContext: managedObjectContext];
+            NSString *title = [NSString stringWithFormat:@"%@", item.itemTitle];
+            NSString *artist = [NSString stringWithFormat:@"%@", item.itemArtist];
+            NSNumber *duration = item.itemPlaybackDuration;
+            
+            [music setValue:title forKey:@"title"];
+            [music setValue:artist forKey:@"artist"];
+            [music setValue:duration forKey:@"duration"];
             error = nil;
             if([managedObjectContext save: &error])
             {
-                NSLog(@"Successsfully added song");
+                NSLog(@"Successsfully added song TITLE: %@ ARTIST: %@ DURATION: %@", title, artist, duration);
             }
-        }*/
+            title = nil;
+            artist = nil;
+            duration = nil;
+            music = nil;
+            item = nil;
+        }
         musicTableView.delegate = self;
         musicTableView.dataSource = self;
         [self.musicTableView reloadData];
@@ -404,7 +455,7 @@
     
     //NSMutableArray *temp = [dateGroups objectForKey:[dates objectAtIndex:section]];
     
-    return [pickedSongs count];
+    return [savedSongs count];
     
 }
 
@@ -418,13 +469,19 @@
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier: CellIdentifier];
     
-    MPMediaItem *currentItem = [pickedSongs objectAtIndex:indexPath.row];
+    MPMediaItem *currentItem = [savedSongs objectAtIndex:indexPath.row];
     if(currentItem)
     {
-        MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
-        cell.imageView.image = [artwork imageWithSize:CGSizeMake (frameWidth * .2, frameWidth * .2)];
-        cell.textLabel.text = [NSString stringWithFormat: @"Title: %@", [currentItem valueForProperty:MPMediaItemPropertyTitle]];
-        cell.detailTextLabel.text = [NSString stringWithFormat: @"Artist: %@", [currentItem valueForProperty:MPMediaItemPropertyAlbumTitle]];
+        MPMediaItemArtwork *artwork = currentItem.itemArtwork;
+        if(!artwork)
+            cell.imageView.image = [self imageWithImage:[UIImage imageNamed:@"musicalNotes.png"] scaledToSize:CGSizeMake (frameWidth * .2, frameWidth * .2)];
+        else
+            cell.imageView.image = [artwork imageWithSize:CGSizeMake (frameWidth * .2, frameWidth * .2)];
+        cell.textLabel.text = [NSString stringWithFormat: @"%@", currentItem.itemTitle];
+        if (!currentItem.itemArtist)
+            cell.detailTextLabel.text = @"";
+        else
+            cell.detailTextLabel.text = [NSString stringWithFormat: @"%@", currentItem.itemArtist];
     }
     return cell;
 }
@@ -433,21 +490,24 @@
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [musicPlayer pause];
     
-    MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
-    NSString *currentTitle = [currentItem valueForProperty:MPMediaItemPropertyTitle];
-    NSString *currentArtist = [currentItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+    if([musicPlayer playbackState] == MPMusicPlaybackStatePaused || [musicPlayer playbackState] == MPMusicPlaybackStateStopped)
+        musicPlayer.nowPlayingItem = [savedSongs objectAtIndex:0];
     
-    MPMediaItem *desiredItem = [pickedSongs objectAtIndex:indexPath.row];
-    NSString *desiredTitle = [desiredItem valueForProperty:MPMediaItemPropertyTitle];
-    NSString *desiredArtist = [desiredItem valueForProperty:MPMediaItemPropertyAlbumArtist];
+    MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
+    NSString *currentTitle = currentItem.itemTitle;
+    NSString *currentArtist = currentItem.itemArtist;
+    
+    MPMediaItem *desiredItem = [savedSongs objectAtIndex:indexPath.row];
+    NSString *desiredTitle = desiredItem.itemTitle;
+    NSString *desiredArtist = desiredItem.itemArtist;
     
     [musicPlayer skipToBeginning];
     
-    for(MPMediaItem *song in pickedSongs)
+    for(MPMediaItem *song in savedSongs)
     {
-        currentTitle = [song valueForProperty:MPMediaItemPropertyTitle];
-        currentArtist = [song valueForProperty:MPMediaItemPropertyAlbumArtist];
-        if([currentTitle isEqualToString:desiredTitle] && ([currentArtist isEqualToString:desiredArtist] || (!currentArtist && !desiredArtist)))
+        currentTitle = song.itemTitle;
+        currentArtist = song.itemArtist;
+        if(([currentTitle isEqualToString:desiredTitle] && [currentArtist isEqualToString:desiredArtist]) || ([currentTitle isEqualToString:desiredTitle] && (!currentArtist && !desiredArtist)))
         {
             musicPlayer.nowPlayingItem = song;
             break;
