@@ -160,7 +160,7 @@
                 else
                 {
                     [self.view hideActivityView];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid Login" message:@"username or password is incorrect"  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"username or password is incorrect"  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
                     [alert show];
                 }
             });
