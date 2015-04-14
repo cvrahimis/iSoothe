@@ -161,9 +161,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%s", __PRETTY_FUNCTION__);
-    if(loginString){//Debug
-        [self.view makeToast:loginString duration:5.0 position:[NSValue valueWithCGPoint:CGPointMake(frameWidth / 2, frameHeight * .8)]];
-    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -183,6 +180,9 @@
     self.navigationItem.title = @"Rating Screen";
     self.navigationController.navigationBar.translucent = YES;
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    if(loginString){//Debug
+        [self.view makeToast:loginString duration:15.0 position:[NSValue valueWithCGPoint:CGPointMake(frameWidth / 2, frameHeight /2)]];
+    }
     
 }
 
