@@ -19,11 +19,13 @@
     NSManagedObjectContext * _managedObjectContext;
     NSString *result;
     Reachability *internetReachableFoo;
+    NSString *loginCred;
 }
 
 @property (strong, nonatomic) NSMutableData *_responseData;
 @property (strong, nonatomic) NSManagedObjectContext * _managedObjectContext;
 @property (strong, nonatomic) NSString *result;
+@property (strong, nonatomic) NSString *loginCred;
 
 - (id)initWithManagedObjectContext:(NSManagedObjectContext*)managedObjectContext;
 
@@ -36,5 +38,7 @@
 -(Therapist*) getTherapistOnDevice;
 
 -(void) sendActivities;
+
+-(NSString*)getLoginString;
 
 @end

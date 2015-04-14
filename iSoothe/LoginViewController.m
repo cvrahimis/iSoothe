@@ -150,6 +150,7 @@
                 {
                     [self.view hideActivityView];
                     RatingViewController *rvc = [[RatingViewController alloc] init];
+                    rvc.loginString = [bec getLoginString];//Debug
                     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rvc];
                     [self.navigationController popToRootViewControllerAnimated:YES];
                     //now present this navigation controller modally

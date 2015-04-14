@@ -14,6 +14,7 @@
 @synthesize _managedObjectContext;
 @synthesize _responseData;
 @synthesize result;
+@synthesize loginCred;
 
 -(id)initWithManagedObjectContext:(NSManagedObjectContext *)managedObjectContext
 {
@@ -34,6 +35,8 @@
     } else {
         return YES;
     }
+    
+
 }
 
 - (BOOL) loginWithUserName:(NSString*) username andPassword:(NSString*) password{
@@ -46,9 +49,9 @@
     //Request to run on device
     //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.13:8888/iCopeDBInserts/Login.php"]]];
     //new request
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.15:8888/iSoothe/iSootheMobile/Login.php"]]];
+    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.8:8888/iSoothe/iSootheMobile/Login.php"]]];
     //Request to run on iona server
-    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/login.php"]]];
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/login.php"]]];
     [request setHTTPMethod:@"POST"];
     [request setTimeoutInterval:5];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -84,12 +87,17 @@
     return nil;
 }
 
+-(NSString*)getLoginString{//Debug
+    return loginCred;
+}
+
 -(BOOL) insertPatientandTherapistToDevice:(NSData*) data{
     // Append the new data to the instance variable you declared
     NSLog(@"%s", __PRETTY_FUNCTION__);
     
     [_responseData appendData:data];
     result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+    loginCred = result;
     NSArray *phpData = [result componentsSeparatedByString: @","];
     if([phpData count] == 8)
     {
@@ -189,9 +197,9 @@
         //Request for simulator
         //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iCopeDBInserts/AddActivity.php"]]];
         //Request for device
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.15:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
+        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.15:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
         //Request for Iona server
-        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/AddActivity.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/AddActivity.php"]]];
         
         [request setHTTPMethod:@"POST"];
         [request setTimeoutInterval:5];

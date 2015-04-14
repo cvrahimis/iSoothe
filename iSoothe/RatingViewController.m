@@ -17,6 +17,7 @@
 
 @implementation RatingViewController
 @synthesize background, doneBtn, topLbl, bottonLbl, okBtn, happyBtn, thermometer, mesurmentView, mood, exit, bec, duration, time, activity;
+@synthesize loginString; //Debug
 
 -(id) init{
     if(self = [super init]){
@@ -160,6 +161,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    if(loginString){//Debug
+        [self.view makeToast:loginString duration:5.0 position:[NSValue valueWithCGPoint:CGPointMake(frameWidth / 2, frameHeight * .8)]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -179,6 +183,7 @@
     self.navigationItem.title = @"Rating Screen";
     self.navigationController.navigationBar.translucent = YES;
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
+    
 }
 
 -(long) Time {

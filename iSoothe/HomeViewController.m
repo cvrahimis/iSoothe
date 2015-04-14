@@ -40,7 +40,10 @@
         greetingLbl.center = CGPointMake(frameWidth * .5, frameHeight * .15);
         greetingLbl.text = [self Greeting];
         greetingLbl.textAlignment = NSTextAlignmentCenter;
-        greetingLbl.numberOfLines = 2;
+        greetingLbl.adjustsFontSizeToFitWidth = YES;
+        NSUInteger temp = [greetingLbl.text length]/18+1;
+        int lineCount = (int) temp;
+        greetingLbl.numberOfLines = lineCount;
         greetingLbl.font = [UIFont fontWithName: @"Courier-BoldOblique" size: 40];
         greetingLbl.textColor = [UIColor whiteColor];
         [self.view addSubview: greetingLbl];

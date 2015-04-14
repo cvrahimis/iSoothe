@@ -11,6 +11,7 @@
 #import "BackEndComunicator.h"
 #import "AppDelegate.h"
 #import "RatingViewController.h"
+#import "UIView+Toast.h"
 
 @interface LoginViewController : UIViewController<UITextFieldDelegate, UINavigationControllerDelegate>{
     UIImageView *background;

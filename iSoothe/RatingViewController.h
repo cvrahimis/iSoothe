@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 #import "HomeViewController.h"
-#import "UIView+Toast.h"
+#import "UIView+Toast.h"//Debug
 #import "BackEndComunicator.h"
 #import "Activities.h"
 
@@ -36,6 +36,7 @@
     BackEndComunicator *bec;
     int urge;
     double section;
+    NSString *loginString;//Debug
 }
 
 @property (nonatomic) BOOL exit;
@@ -52,6 +53,7 @@
 @property (strong, nonatomic) NSString *duration;
 @property (strong, nonatomic) NSDate *time;
 @property (strong, nonatomic) NSString *activity;
+@property (strong, nonatomic) NSString *loginString;//Debug
 
 
 @end
