@@ -14,6 +14,7 @@
 #import "ExerciseTableViewController.h"
 #import "ReadingViewController.h"
 #import "RatingViewController.h"
+#import "AppSettingsViewController.h"
 #import "BackEndComunicator.h"
 
 @interface HomeViewController : UIViewController{

@@ -74,7 +74,7 @@
                                                  action:@selector(done)];
         
         UIImage *addBkg = [UIImage imageNamed:@"doubleMusicNote.png"];
-        addBkg = [self imageWithImage:addBkg scaledToSize: CGSizeMake(addBkg.size.width / 4, addBkg.size.height / 4)];
+        addBkg = [self imageWithImage:addBkg scaledToSize: CGSizeMake(addBkg.size.width / 20, addBkg.size.height / 20)];
         showMusic = [[UIBarButtonItem alloc] initWithImage:addBkg style:UIBarButtonItemStylePlain target:self action:@selector(showMediaPicker:)];
                      //initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showMediaPicker:)];
         

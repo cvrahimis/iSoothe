@@ -68,8 +68,8 @@
             [activityBtns[i] addTarget:self action:@selector(activityPress:) forControlEvents:UIControlEventTouchUpInside];
             [self.view addSubview: activityBtns[i]];
         }
-        
-        /*ratingBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
+        /*
+        ratingBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
         [ratingBtn setFrame:CGRectMake(0, 0, frameWidth * .5, frameHeight * .06)];
         [ratingBtn setCenter:CGPointMake(frameWidth / 2, frameHeight * .95)];
         ratingBtn.backgroundColor = [UIColor yellowColor];
@@ -80,7 +80,19 @@
         [ratingBtn.titleLabel setFont:[UIFont systemFontOfSize: 20]];
         [ratingBtn setTitle:@"Exit To Rating" forState:UIControlStateNormal];
         [ratingBtn addTarget:self action:@selector(ratingScreen) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview: ratingBtn];*/
+        [self.view addSubview: ratingBtn];
+        */
+        settingsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0,0, frameWidth*.12, frameWidth*.12)];
+        settingsBtn.center = CGPointMake(frameWidth *.9, frameHeight *.93);
+        settingsIcon = [UIImage imageNamed:@"SettingsIcon"];
+        [settingsBtn setBackgroundImage:settingsIcon forState:UIControlStateNormal];
+        settingsBtn.tag = 6;
+        settingsBtn.layer.cornerRadius = 10;
+        settingsBtn.clipsToBounds = YES;
+        settingsBtn.showsTouchWhenHighlighted = YES;
+        settingsBtn.userInteractionEnabled = YES;
+        [settingsBtn addTarget:self action:@selector(activityPress:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:settingsBtn];
     }
     return self;
 }
@@ -116,22 +128,7 @@
 }
 
 -(void) initButtons {
-    //settingsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0,0, frameWidth*.12, frameWidth*.12)];
-    //settingsBtn.center = CGPointMake(frameWidth - (frameWidth*.1), frameHeight - (frameHeight*.15));
     
-    settingsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0,0, frameWidth*.12, frameWidth*.12)];
-    settingsBtn.center = CGPointMake(frameWidth/2, frameHeight/2);
-    settingsIcon = [UIImage imageNamed:@"SettingsIcon"];
-    [settingsBtn setBackgroundImage:settingsIcon forState:UIControlStateNormal];
-    settingsBtn.tag = 6;
-    settingsBtn.layer.cornerRadius = 10;
-    settingsBtn.clipsToBounds = YES;
-    settingsBtn.showsTouchWhenHighlighted = YES;
-    settingsBtn.userInteractionEnabled = YES;
-    [settingsBtn addTarget:self action:@selector(activityPress:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:settingsBtn];
-    [self.view bringSubviewToFront:settingsBtn];
-    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 }
 
 // Method returns todays current hour.
@@ -168,7 +165,7 @@
     //[self initBackground];
     [self initStrings];
     //[self initLabels];
-    [self initButtons];
+    //[self initButtons];
 }
 
 - (void) viewWillAppear: (BOOL) animated
@@ -261,7 +258,7 @@
         case 6:
         {
             NSLog(@"%s ================== Settings Button Pressed", __PRETTY_FUNCTION__);
-            ReadingViewController *settingsVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"settingsVC"];
+            AppSettingsViewController *settingsVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"settingsVC"];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
             [self.navigationController popToRootViewControllerAnimated:YES];
             //now present this navigation controller modally

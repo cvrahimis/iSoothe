@@ -57,9 +57,9 @@
 }
 
 -(void) initBackground {
-    if (currentTime < 12) background.image = [UIImage imageNamed:@"Morning"];
-    else if (currentTime > 12 && currentTime < 18) background.image = [UIImage imageNamed:@"Afternoon"];
-    else background.image = [UIImage imageNamed:@"Evening"];
+    if (currentTime < 12) background.image = [UIImage imageNamed:@"morning.jpg"];
+    else if (currentTime > 12 && currentTime < 18) background.image = [UIImage imageNamed:@"afternoon.jpg"];
+    else background.image = [UIImage imageNamed:@"evening.jpg"];
     background.userInteractionEnabled = YES;
     self.view.userInteractionEnabled = YES;
 }
@@ -174,10 +174,10 @@
         case 0:
         {
             [self initLoadIcon:2];
-            NSLog(@"%s -Settings Done Pressed-", __PRETTY_FUNCTION__);
+            NSLog(@"%s -Settings Pressed-", __PRETTY_FUNCTION__);
             UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                                      bundle: nil];
-            HomeViewController *hvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+            HomeViewController *hvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hvc];
             [self presentViewController:navigationController
                                animated:YES
@@ -185,7 +185,7 @@
         }
         case 1:
         {
-            NSLog(@"%s -Connect Done Pressed-", __PRETTY_FUNCTION__);
+            NSLog(@"%s -Connect Pressed-", __PRETTY_FUNCTION__);
             centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
             NSArray *services = @[[CBUUID UUIDWithString:BLE_VSN_GATT_SERVICE_UUID]]; // set gatt service
             [centralManager scanForPeripheralsWithServices:nil options:nil];
@@ -197,10 +197,9 @@
 }
 
 -(void) done{
-    NSLog(@"%s -Settings Done Pressed-", __PRETTY_FUNCTION__);
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
                                                              bundle: nil];
-    HomeViewController *hvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"mainViewController"];
+    HomeViewController *hvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hvc];
     [self presentViewController:navigationController
                        animated:YES
@@ -208,10 +207,7 @@
 }
 
 -(void) screenLog:(NSString *) nextLog {
-    //connectLabel.text = [@"\r\n" stringByAppendingString:connectLabel.text];
-    //connectLabel.text = [nextLog stringByAppendingString:connectLabel.text];
     connectLabel.text = [@"- " stringByAppendingString:nextLog];
-    
 }
 
 #pragma mark - CBCentralManagerDelegate

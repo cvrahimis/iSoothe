@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p5F-H8-5rm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="p5F-H8-5rm">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -159,6 +159,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Nh-cx-gDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2391" y="-5590"/>
+        </scene>
+        <!--App Settings View Controller-->
+        <scene sceneID="Dmx-67-ltp">
+            <objects>
+                <viewController storyboardIdentifier="settingsVC" id="eVB-lU-J2z" customClass="AppSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lgT-Vu-Z8I"/>
+                        <viewControllerLayoutGuide type="bottom" id="lBY-DX-Q9G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IkP-w1-6fd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PE-ns-EZx">
+                                <rect key="frame" x="0.0" y="20" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7PE-ns-EZx" firstAttribute="height" secondItem="IkP-w1-6fd" secondAttribute="height" id="fAZ-zq-ktJ"/>
+                            <constraint firstItem="7PE-ns-EZx" firstAttribute="top" secondItem="lgT-Vu-Z8I" secondAttribute="bottom" id="gZf-z5-Iud"/>
+                            <constraint firstItem="7PE-ns-EZx" firstAttribute="width" secondItem="IkP-w1-6fd" secondAttribute="width" id="gta-gt-pzr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="background" destination="7PE-ns-EZx" id="zdW-oo-Lm8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6SU-gZ-OhF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1694" y="-5590"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="2oL-27-WKF">
