@@ -39,29 +39,6 @@
 
 }
 
-- (BOOL) loginWithUserName:(NSString*) username andPassword:(NSString*) password{
-    NSString *post = [NSString stringWithFormat:@"Username=%@&Password=%@",username,password];
-    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    //NSString *postData = [[NSString alloc] initWithData:post encoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    //Request to run on simulator
-    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iCopeDBInserts/Login.php"]]];
-    //Request to run on device
-    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.13:8888/iCopeDBInserts/Login.php"]]];
-    //new request
-    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.8:8888/iSoothe/iSootheMobile/Login.php"]]];
-    //Request to run on iona server
-    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/login.php"]]];
-    [request setHTTPMethod:@"POST"];
-    [request setTimeoutInterval:5];
-    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
-    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    [request setHTTPBody:postData];
-    NSData *serverData = [NSURLConnection sendSynchronousRequest: request returningResponse:nil error:nil];
-    return [self insertPatientandTherapistToDevice:serverData];
-}
-
 -(Patient*) getPatientOnDevice
 {
     if([self isPatientAndTherapistOnDevice]){
@@ -92,42 +69,67 @@
     return loginCred;
 }
 
--(BOOL) insertPatientandTherapistToDevice:(NSData*) data{
-    // Append the new data to the instance variable you declared
-    NSLog(@"%s", __PRETTY_FUNCTION__);
-    
-    [_responseData appendData:data];
+- (BOOL) loginWithUserName:(NSString*) username andPassword:(NSString*) password{
+    NSString *post = [NSString stringWithFormat:@"Username=%@&Password=%@",username,password];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    //NSString *postData = [[NSString alloc] initWithData:post encoding:NSUTF8StringEncoding];
+    NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    //Request to run on simulator
+    [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/Login.php"]]];
+    //Request to run on device
+    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.13:8888/iCopeDBInserts/Login.php"]]];
+    //new request
+    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.10:8888/iSoothe/iSootheMobile/Login.php"]]];
+    //Request to run on iona server
+    //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/login.php"]]];
+    [request setHTTPMethod:@"POST"];
+    [request setTimeoutInterval:5];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    NSData *serverData = [NSURLConnection sendSynchronousRequest: request returningResponse:nil error:nil];
+    [_responseData appendData:serverData];
     //result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    result = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    
+    result = [[NSString alloc] initWithData:serverData encoding:NSUTF8StringEncoding];
     loginCred = result;
     NSArray *phpData = [result componentsSeparatedByString: @","];
-    if([phpData count] == 8)
+    
+    return [self insertPatientandTherapistToDevice:phpData withUsername:username andPassword:password];
+}
+
+-(BOOL) insertPatientandTherapistToDevice:(NSArray*) loginArray withUsername: (NSString*) uname andPassword: (NSString*) pass{
+    // Append the new data to the instance variable you declared
+    NSLog(@"%s", __PRETTY_FUNCTION__);
+    if ([loginArray count] == 8)
     {
-        Therapist *therapist = [NSEntityDescription insertNewObjectForEntityForName:@"Therapist" inManagedObjectContext:_managedObjectContext];
-        NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-        f.numberStyle = NSNumberFormatterNoStyle;
-        therapist.therapistId = [f numberFromString:[phpData objectAtIndex:1]];
-        therapist.therapistFirstName = [phpData objectAtIndex:6];
-        therapist.therapistLastName = [phpData objectAtIndex:7];
+        if(loginArray && [uname isEqualToString:[loginArray objectAtIndex:2]] && [pass isEqualToString:[loginArray objectAtIndex:3]])
+        {
+            Therapist *therapist = [NSEntityDescription insertNewObjectForEntityForName:@"Therapist" inManagedObjectContext:_managedObjectContext];
+            NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+            f.numberStyle = NSNumberFormatterNoStyle;
+            therapist.therapistId = [f numberFromString:[loginArray objectAtIndex:1]];
+            therapist.therapistFirstName = [loginArray objectAtIndex:6];
+            therapist.therapistLastName = [loginArray objectAtIndex:7];
         
-        Patient *patient = [NSEntityDescription insertNewObjectForEntityForName:@"Patient" inManagedObjectContext:_managedObjectContext];
-        patient.patientId = [f numberFromString:[phpData objectAtIndex:0]];
-        patient.therapistId = [f numberFromString:[phpData objectAtIndex:1]];
-        patient.patientLogin = [phpData objectAtIndex:2];
-        patient.patientPassword = [phpData objectAtIndex:3];
-        patient.patientFirstName = [phpData objectAtIndex:4];
-        patient.patientLastName = [phpData objectAtIndex:5];
-        patient.therapist = therapist;
-        therapist.patient = patient;
-        //[therapist addPatientObject: patient];
+            Patient *patient = [NSEntityDescription insertNewObjectForEntityForName:@"Patient" inManagedObjectContext:_managedObjectContext];
+            patient.patientId = [f numberFromString:[loginArray objectAtIndex:0]];
+            patient.therapistId = [f numberFromString:[loginArray objectAtIndex:1]];
+            patient.patientLogin = [loginArray objectAtIndex:2];
+            patient.patientPassword = [loginArray objectAtIndex:3];
+            patient.patientFirstName = [loginArray objectAtIndex:4];
+            patient.patientLastName = [loginArray objectAtIndex:5];
+            patient.therapist = therapist;
+            therapist.patient = patient;
+            //[therapist addPatientObject: patient];
         
-        NSError *error;
-        if (![_managedObjectContext save:&error]) {
-            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
-            return NO;
+            NSError *error;
+            if (![_managedObjectContext save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+                return NO;
+            }
+            return YES;
         }
-        return YES;
     }
     return NO;
 }

@@ -37,6 +37,7 @@
         connectionLbl.center = CGPointMake(frameWidth / 2, self.navigationController.navigationBar.frame.size.height + ((frameHeight * .1) / 2));
         connectionLbl.backgroundColor = [UIColor redColor];
         connectionLbl.textColor = [UIColor whiteColor];
+        connectionLbl.hidden = YES;
         connectionLbl.text = @"No Internet Connection";
         connectionLbl.textAlignment = NSTextAlignmentCenter;
         [self.view addSubview:connectionLbl];
@@ -56,7 +57,7 @@
         appName.textAlignment = NSTextAlignmentCenter;
         [scrollView addSubview:appName];
         
-        usernameTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .08)];
+        usernameTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .07)];
         usernameTF.center = CGPointMake(frameWidth * .5, frameHeight * .3);
         usernameTF.borderStyle = UITextBorderStyleRoundedRect;
         usernameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
@@ -64,8 +65,8 @@
         usernameTF.delegate = self;
         [scrollView addSubview:usernameTF];
         
-        passwordTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .08)];
-        passwordTF.center = CGPointMake(frameWidth * .5, frameHeight * .45);
+        passwordTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .07)];
+        passwordTF.center = CGPointMake(frameWidth * .5, frameHeight * .4);
         passwordTF.secureTextEntry = YES;
         passwordTF.borderStyle = UITextBorderStyleRoundedRect;
         passwordTF.placeholder = @"Password";
@@ -73,12 +74,13 @@
         [scrollView addSubview:passwordTF];
         
         loginBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-        loginBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .08);
-        loginBtn.center = CGPointMake(frameWidth * .5, frameHeight * .6);
-        loginBtn.opaque = YES;
-        loginBtn.layer.cornerRadius = 12;
+        loginBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .07);
+        loginBtn.center = CGPointMake(frameWidth * .5, frameHeight * .5);
+        loginBtn.layer.cornerRadius = 10;
+        loginBtn.layer.borderWidth=1.0f;
+        loginBtn.layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
         loginBtn.clipsToBounds = YES;
-        loginBtn.backgroundColor = [UIColor colorWithRed: .0 green: .669 blue: .0 alpha: 1.0];
+        loginBtn.backgroundColor = [UIColor colorWithRed:9 green:.9 blue:1 alpha:.3];
         loginBtn.tintColor = [UIColor whiteColor];
         [loginBtn setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
         [loginBtn.titleLabel setFont:[UIFont systemFontOfSize: 22]];
@@ -87,12 +89,13 @@
         [scrollView addSubview:loginBtn];
         
         cancelBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
-        cancelBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .08);
-        cancelBtn.center = CGPointMake(frameWidth * .5, frameHeight * .75);
-        cancelBtn.opaque = YES;
-        cancelBtn.layer.cornerRadius = 12;
+        cancelBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .07);
+        cancelBtn.center = CGPointMake(frameWidth * .5, frameHeight * .6);
+        cancelBtn.layer.cornerRadius = 10;
+        cancelBtn.layer.borderWidth=1.0f;
+        cancelBtn.layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
         cancelBtn.clipsToBounds = YES;
-        cancelBtn.backgroundColor = [UIColor colorWithRed: .0 green: .669 blue: .0 alpha: 1.0];
+        cancelBtn.backgroundColor = [UIColor colorWithRed:9 green:.9 blue:1 alpha:.3];
         cancelBtn.tintColor = [UIColor whiteColor];
         [cancelBtn setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
         [cancelBtn.titleLabel setFont:[UIFont systemFontOfSize: 22]];
@@ -143,7 +146,7 @@
             [self hideKeyBoard];
             [self.view showActivityViewWithLabel:@"Logging In"];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 4.0 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
                 loginSuccess = [bec loginWithUserName:usernameTF.text andPassword:passwordTF.text];
                 
                 if (loginSuccess)
@@ -160,7 +163,7 @@
                 else
                 {
                     [self.view hideActivityView];
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@"username or password is incorrect"  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login Failed" message:@""  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
                     [alert show];
                 }
             });

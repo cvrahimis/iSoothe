@@ -48,12 +48,6 @@
         greetingLbl.textColor = [UIColor whiteColor];
         [self.view addSubview: greetingLbl];
         
-        NSArray *colors = @[[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1],
-                            [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1],
-                            [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1],
-                            [UIColor colorWithRed:.820 green:0.0 blue:1.0 alpha:1],
-                            [UIColor colorWithRed:1.0 green:0.5 blue:0.0 alpha:1],
-                            ];
         NSArray *titles = @[@"Music", @"Reading", @"Drawing", @"Journal", @"Exercise"];
         
         for (int i = 0; i < 5; i++)
@@ -61,7 +55,9 @@
             activityBtns[i] = [UIButton buttonWithType: UIButtonTypeRoundedRect];
             [activityBtns[i] setFrame:CGRectMake(0, 0, frameWidth * .7, frameHeight * .06)];
             [activityBtns[i] setCenter:CGPointMake(frameWidth / 2, (frameHeight * .4) + ((frameHeight * .09) * (i + 1)))];
-            activityBtns[i].backgroundColor = [colors objectAtIndex:i];
+            activityBtns[i].layer.borderWidth=1.0f;
+            activityBtns[i].layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
+            activityBtns[i].backgroundColor = [UIColor colorWithRed:9 green:.9 blue:1 alpha:.3];
             activityBtns[i].layer.cornerRadius = 10;
             activityBtns[i].clipsToBounds = YES;
             activityBtns[i].tag = i;
