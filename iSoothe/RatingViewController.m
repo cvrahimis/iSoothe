@@ -400,7 +400,7 @@
         }
         else if (swiped && !moodPressed)
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Mood not selected" message:@"You must select a mood"  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please select a mood" message:@"Mood must be selected"  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
             [alert show];
         }
         else if (!swiped && moodPressed)
@@ -410,7 +410,7 @@
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Must select mood and urge" message:@""  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please select mood and urge" message:@""  delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil, nil];
             [alert show];
         }
     }

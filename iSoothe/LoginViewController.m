@@ -50,15 +50,15 @@
         [self.view addSubview:scrollView];
         
         appName = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frameWidth, frameHeight *.1)];
-        appName.center = CGPointMake(frameWidth / 2, frameHeight * .15);
+        appName.center = CGPointMake(frameWidth * .5, frameHeight * .20);
         appName.text = @"iSoothe";
-        [appName setFont:[UIFont systemFontOfSize:40]];
+        appName.font = [UIFont fontWithName: @"Baskerville-SemiBoldItalic" size: 50];
         appName.textColor = [UIColor whiteColor];
         appName.textAlignment = NSTextAlignmentCenter;
         [scrollView addSubview:appName];
         
         usernameTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .07)];
-        usernameTF.center = CGPointMake(frameWidth * .5, frameHeight * .3);
+        usernameTF.center = CGPointMake(frameWidth * .5, frameHeight * .35);
         usernameTF.borderStyle = UITextBorderStyleRoundedRect;
         usernameTF.autocapitalizationType = UITextAutocapitalizationTypeNone;
         usernameTF.placeholder = @"Username";
@@ -66,7 +66,7 @@
         [scrollView addSubview:usernameTF];
         
         passwordTF = [[UITextField alloc] initWithFrame: CGRectMake(0, 0, frameWidth*.65, frameHeight * .07)];
-        passwordTF.center = CGPointMake(frameWidth * .5, frameHeight * .4);
+        passwordTF.center = CGPointMake(frameWidth * .5, frameHeight * .45);
         passwordTF.secureTextEntry = YES;
         passwordTF.borderStyle = UITextBorderStyleRoundedRect;
         passwordTF.placeholder = @"Password";
@@ -75,7 +75,7 @@
         
         loginBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
         loginBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .07);
-        loginBtn.center = CGPointMake(frameWidth * .5, frameHeight * .5);
+        loginBtn.center = CGPointMake(frameWidth * .5, frameHeight * .55);
         loginBtn.layer.cornerRadius = 10;
         loginBtn.layer.borderWidth=1.0f;
         loginBtn.layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
@@ -90,7 +90,7 @@
         
         cancelBtn = [UIButton buttonWithType: UIButtonTypeRoundedRect];
         cancelBtn.frame = CGRectMake(0, 0, frameWidth*.65, frameHeight * .07);
-        cancelBtn.center = CGPointMake(frameWidth * .5, frameHeight * .6);
+        cancelBtn.center = CGPointMake(frameWidth * .5, frameHeight * .65);
         cancelBtn.layer.cornerRadius = 10;
         cancelBtn.layer.borderWidth=1.0f;
         cancelBtn.layer.borderColor=[[UIColor colorWithRed:.7 green:.9 blue:1 alpha:1] CGColor];
@@ -182,9 +182,9 @@
     NSLog(@"%s",__PRETTY_FUNCTION__);
     [super viewWillAppear:animated];
     
-    self.navigationItem.title = @"Login";
-    self.navigationController.navigationBar.translucent = NO;
-    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    //self.navigationItem.title = @"Login";
+    self.navigationController.navigationBar.translucent = YES;
+    [[self navigationController] setNavigationBarHidden:YES animated:NO];
     
     
     
@@ -230,7 +230,7 @@
 {
     [self connectionLable];
     activeField = textField;
-    [scrollView setContentOffset:CGPointMake(0, [scrollView convertPoint:CGPointZero fromView:textField].y - 80)];
+    [scrollView setContentOffset:CGPointMake(0, [scrollView convertPoint:CGPointZero fromView:textField].y - frameHeight * .3)];
 }
 
 

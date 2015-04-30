@@ -22,7 +22,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     backTint = [[UIView alloc] initWithFrame:CGRectMake(0, 0, frameWidth, frameHeight)];
     backTint.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:.15];
     [self.view addSubview:backTint];
@@ -136,7 +135,7 @@
                                              target:self
                                              action:@selector(done)];
     
-    self.navigationItem.title = @"Reading";
+    self.navigationItem.title = @"Inspiration";
     self.navigationController.navigationBar.translucent = NO;
     [[self navigationController] setNavigationBarHidden:NO animated:YES];
 }

@@ -2,7 +2,7 @@
 //  HomeViewController.m
 //  SwipeFunctionality
 //
-//  Created by Costas Simiharv on 12/31/14.
+//  Created by Costas Simiharv on 12/31/14. Brown. Merge. 
 //  Copyright (c) 2014 cvrahimis. All rights reserved.
 //
 
@@ -19,7 +19,8 @@
 
 @synthesize bec;
 @synthesize greetingLbl;
-@synthesize ratingBtn;
+//@synthesize ratingBtn;
+@synthesize settingsBtn;
 /*@synthesize musicBtn;
  @synthesize readingBtn;
  @synthesize drawingBtn;
@@ -44,7 +45,7 @@
         NSUInteger temp = [greetingLbl.text length]/18+1;
         int lineCount = (int) temp;
         greetingLbl.numberOfLines = lineCount;
-        greetingLbl.font = [UIFont fontWithName: @"Courier-BoldOblique" size: 40];
+        greetingLbl.font = [UIFont fontWithName: @"Baskerville-SemiBoldItalic" size: 40];
         greetingLbl.textColor = [UIColor whiteColor];
         [self.view addSubview: greetingLbl];
         
@@ -115,16 +116,22 @@
 }
 
 -(void) initButtons {
+    //settingsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0,0, frameWidth*.12, frameWidth*.12)];
+    //settingsBtn.center = CGPointMake(frameWidth - (frameWidth*.1), frameHeight - (frameHeight*.15));
     
-    /*readingBtn.layer.cornerRadius = 10;
-     drawingBtn.layer.cornerRadius = 10;
-     journalBtn.layer.cornerRadius = 10;
-     excerciseBtn.layer.cornerRadius = 10;
-     
-     readingBtn.clipsToBounds = YES;
-     drawingBtn.clipsToBounds = YES;
-     journalBtn.clipsToBounds = YES;
-     excerciseBtn.clipsToBounds = YES;*/
+    settingsBtn = [[UIButton alloc] initWithFrame:CGRectMake(0,0, frameWidth*.12, frameWidth*.12)];
+    settingsBtn.center = CGPointMake(frameWidth/2, frameHeight/2);
+    settingsIcon = [UIImage imageNamed:@"SettingsIcon"];
+    [settingsBtn setBackgroundImage:settingsIcon forState:UIControlStateNormal];
+    settingsBtn.tag = 6;
+    settingsBtn.layer.cornerRadius = 10;
+    settingsBtn.clipsToBounds = YES;
+    settingsBtn.showsTouchWhenHighlighted = YES;
+    settingsBtn.userInteractionEnabled = YES;
+    [settingsBtn addTarget:self action:@selector(activityPress:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:settingsBtn];
+    [self.view bringSubviewToFront:settingsBtn];
+    NSLog(@"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 }
 
 // Method returns todays current hour.
@@ -161,7 +168,7 @@
     //[self initBackground];
     [self initStrings];
     //[self initLabels];
-    //[self initButtons];
+    [self initButtons];
 }
 
 - (void) viewWillAppear: (BOOL) animated
@@ -251,6 +258,20 @@
             [self.navigationController pushViewController:ratingVC animated:YES];
             break;
         }
+        case 6:
+        {
+            NSLog(@"%s ================== Settings Button Pressed", __PRETTY_FUNCTION__);
+            ReadingViewController *settingsVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"settingsVC"];
+            UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+            [self.navigationController popToRootViewControllerAnimated:YES];
+            //now present this navigation controller modally
+            [self presentViewController:navigationController
+                               animated:YES
+                             completion:nil];
+            
+            break;
+        }
+
         default:
             break;
     }

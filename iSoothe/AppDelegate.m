@@ -25,6 +25,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     NSLog(@"%s", __PRETTY_FUNCTION__);
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Exercises" inManagedObjectContext:[self managedObjectContext]];
@@ -81,10 +82,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     bec = [[BackEndComunicator alloc] initWithManagedObjectContext:_managedObjectContext];
-    if ([bec isPatientAndTherapistOnDevice])
+    //if ([bec isPatientAndTherapistOnDevice])
         self.viewController = [[RatingViewController alloc] init];
-    else
-        self.viewController = [[LoginViewController alloc] init];
+    //else
+        //self.viewController = [[LoginViewController alloc] init];
     
     //self.viewController = [[RatingViewController alloc] init];//debug
     
