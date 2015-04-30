@@ -175,9 +175,8 @@
         {
             [self initLoadIcon:2];
             NSLog(@"%s -Settings Pressed-", __PRETTY_FUNCTION__);
-            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main"
-                                                                     bundle: nil];
-            HomeViewController *hvc = [mainStoryboard instantiateViewControllerWithIdentifier:@"homeViewController"];
+            
+            HomeViewController *hvc = [[HomeViewController alloc] init];
             UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:hvc];
             [self presentViewController:navigationController
                                animated:YES
@@ -210,19 +209,14 @@
     connectLabel.text = [@"- " stringByAppendingString:nextLog];
 }
 
-#pragma mark - CBCentralManagerDelegate
-
-// method called whenever you have successfully connected to the BLE peripheral
 - (void)centralManager:(CBCentralManager *)central didConnectPeripheral:(CBPeripheral *)peripheral
 {
     [peripheral setDelegate:self];
     [peripheral discoverServices:nil];
     self.connectedString = [NSString stringWithFormat:@"Connected: %@", peripheral.state == CBPeripheralStateConnected ? @"YES" : @"NO"];
     [self screenLog:self.connectedString];
-    NSLog(@"%@", self.connectedString);
 }
 
-// CBCentralManagerDelegate - This is called with the CBPeripheral class as its main input parameter. This contains most of the information there is to know about a BLE peripheral.
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
     NSString *localName = [advertisementData objectForKey:CBAdvertisementDataLocalNameKey];
@@ -238,37 +232,25 @@
     }
 }
 
-
-// method called whenever the device state changes.
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central
 {
-    // Determine the state of the peripheral
     if ([central state] == CBCentralManagerStatePoweredOff) {
         [self screenLog: @"Please Turn on Bluetooth On."];
-        NSLog(@"Please Turn on Bluetooth On.");
     }
     else if ([central state] == CBCentralManagerStatePoweredOn) {
         [self screenLog: @"Bluetooth is on. Waiting to connect."];
-        NSLog(@"Bluetooth is on. Waiting to connect.    ");
         [self initLoadIcon: 1];
     }
     else if ([central state] == CBCentralManagerStateUnauthorized) {
         [self screenLog: @"CoreBluetooth BLE state is unauthorized"];
-        NSLog(@"CoreBluetooth BLE state is unauthorized");
     }
     else if ([central state] == CBCentralManagerStateUnknown) {
         [self screenLog: @"CoreBluetooth BLE state is unknown"];
-        NSLog(@"CoreBluetooth BLE state is unknown");
     }
     else if ([central state] == CBCentralManagerStateUnsupported) {
         [self screenLog: @"CoreBluetooth BLE hardware is unsupported on this platform"];
-        NSLog(@"CoreBluetooth BLE hardware is unsupported on this platform");
     }
 }
-
-#pragma mark - CBPeripheralDelegate
-
-// CBPeripheralDelegate - Invoked when you discover the peripheral's available services.
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error
 {
     for (CBService *service in peripheral.services) {
@@ -279,26 +261,14 @@
     }
 }
 
-// Invoked when you discover the characteristics of a specified service.
 - (void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error
 {
 }
 
-// Invoked when you retrieve a specified characteristic's value, or when the peripheral device notifies your app that the characteristic's value has changed.
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    [self screenLog: @"received characteristic value!"];
+    //[self screenLog: @"received characteristic value!"];
 }
 
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end
