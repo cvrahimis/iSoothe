@@ -14,6 +14,7 @@
 #import "ExerciseTableViewController.h"
 #import "ReadingViewController.h"
 #import "RatingViewController.h"
+#import "AppSettingsViewController.h"
 #import "BackEndComunicator.h"
 
 @interface HomeViewController : UIViewController{
@@ -28,12 +29,14 @@
     long currentTime;
     BackEndComunicator *bec;
     UIButton *ratingBtn;
+    UIImage *settingsIcon;
 }
 
 @property (strong, nonatomic) BackEndComunicator *bec;
 @property (strong, nonatomic) UILabel *greetingLbl;
 @property (strong, nonatomic) UIImageView *contentImgView;
 @property (strong, nonatomic) UIButton *ratingBtn;
+@property (strong, nonatomic) UIButton *settingsBtn;
 /*@property (strong, nonatomic) UIButton *musicBtn;
  @property (strong, nonatomic) UIButton *readingBtn;
  @property (strong, nonatomic) UIButton *drawingBtn;

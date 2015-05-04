@@ -43,7 +43,6 @@
 		6370E9971AD47B670053BE6D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E9951AD47B670053BE6D /* DrawingViewController.m */; };
 		6370E99B1AD47BA50053BE6D /* ReadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E99A1AD47BA50053BE6D /* ReadingViewController.m */; };
 		6370E99F1AD47BDA0053BE6D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6370E99E1AD47BDA0053BE6D /* HomeViewController.m */; };
-		6370E9B51AD47BFF0053BE6D /* doubleMusicNote.png in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */; };
 		6370E9B61AD47BFF0053BE6D /* leglifts1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */; };
 		6370E9B71AD47BFF0053BE6D /* backlifts3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */; };
 		6370E9B81AD47BFF0053BE6D /* leglifts2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */; };
@@ -68,6 +67,9 @@
 		6370E9D01AD47C790053BE6D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9CF1AD47C790053BE6D /* UIKit.framework */; };
 		6370E9D21AD47C850053BE6D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */; };
 		6370E9D41AD47C910053BE6D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6370E9D31AD47C910053BE6D /* MediaPlayer.framework */; };
+		C07A4F331AF283590098E956 /* AppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C07A4F321AF283590098E956 /* AppSettingsViewController.m */; };
+		C07A4F351AF297E60098E956 /* doubleMusicNote.png in Resources */ = {isa = PBXBuildFile; fileRef = C07A4F341AF297E60098E956 /* doubleMusicNote.png */; };
+		C07A4F371AF299B80098E956 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C07A4F361AF299B70098E956 /* CoreBluetooth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,7 +153,6 @@
 		6370E99A1AD47BA50053BE6D /* ReadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadingViewController.m; sourceTree = "<group>"; };
 		6370E99D1AD47BDA0053BE6D /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6370E99E1AD47BDA0053BE6D /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleMusicNote.png; sourceTree = "<group>"; };
 		6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leglifts1.jpg; sourceTree = "<group>"; };
 		6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = backlifts3.jpg; sourceTree = "<group>"; };
 		6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = leglifts2.jpg; sourceTree = "<group>"; };
@@ -176,6 +177,10 @@
 		6370E9CF1AD47C790053BE6D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6370E9D31AD47C910053BE6D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		C07A4F311AF283590098E956 /* AppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsViewController.h; sourceTree = "<group>"; };
+		C07A4F321AF283590098E956 /* AppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsViewController.m; sourceTree = "<group>"; };
+		C07A4F341AF297E60098E956 /* doubleMusicNote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doubleMusicNote.png; sourceTree = "<group>"; };
+		C07A4F361AF299B70098E956 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +188,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C07A4F371AF299B80098E956 /* CoreBluetooth.framework in Frameworks */,
 				6370E9D41AD47C910053BE6D /* MediaPlayer.framework in Frameworks */,
 				6370E9D21AD47C850053BE6D /* SystemConfiguration.framework in Frameworks */,
 				6370E9D01AD47C790053BE6D /* UIKit.framework in Frameworks */,
@@ -204,6 +210,7 @@
 		6370E9101AD4726F0053BE6D = {
 			isa = PBXGroup;
 			children = (
+				C07A4F361AF299B70098E956 /* CoreBluetooth.framework */,
 				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
 				6370E9291AD4726F0053BE6D /* Main.storyboard */,
 				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
@@ -229,6 +236,7 @@
 			children = (
 				6370E9201AD4726F0053BE6D /* AppDelegate.h */,
 				6370E9211AD4726F0053BE6D /* AppDelegate.m */,
+				C07A4F301AF283060098E956 /* Setings Controllers */,
 				6370E9A01AD47BDD0053BE6D /* MainControllers */,
 				6370E99C1AD47BB00053BE6D /* ReadingQuotesControllers */,
 				6370E9981AD47B6B0053BE6D /* DrawingControllers */,
@@ -428,7 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				6334C6D81AD62F76004D9293 /* musicalNotes.png */,
-				6370E9A11AD47BFF0053BE6D /* doubleMusicNote.png */,
+				C07A4F341AF297E60098E956 /* doubleMusicNote.png */,
 				6370E9A21AD47BFF0053BE6D /* leglifts1.jpg */,
 				6370E9A31AD47BFF0053BE6D /* backlifts3.jpg */,
 				6370E9A41AD47BFF0053BE6D /* leglifts2.jpg */,
@@ -462,6 +470,15 @@
 				6370E9CB1AD47C5A0053BE6D /* CoreData.framework */,
 			);
 			name = Framworks;
+			sourceTree = "<group>";
+		};
+		C07A4F301AF283060098E956 /* Setings Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C07A4F311AF283590098E956 /* AppSettingsViewController.h */,
+				C07A4F321AF283590098E956 /* AppSettingsViewController.m */,
+			);
+			name = "Setings Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,7 +562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6370E9BE1AD47BFF0053BE6D /* crunches2.jpg in Resources */,
-				6370E9B51AD47BFF0053BE6D /* doubleMusicNote.png in Resources */,
 				6370E9C71AD47BFF0053BE6D /* afternoon.jpg in Resources */,
 				6370E9C01AD47BFF0053BE6D /* sideplank.jpg in Resources */,
 				6370E9B61AD47BFF0053BE6D /* leglifts1.jpg in Resources */,
@@ -553,6 +569,7 @@
 				6370E9C11AD47BFF0053BE6D /* fastforward.png in Resources */,
 				6370E9B71AD47BFF0053BE6D /* backlifts3.jpg in Resources */,
 				6370E9BC1AD47BFF0053BE6D /* leglifts3.jpg in Resources */,
+				C07A4F351AF297E60098E956 /* doubleMusicNote.png in Resources */,
 				6370E9301AD4726F0053BE6D /* LaunchScreen.xib in Resources */,
 				6370E9BD1AD47BFF0053BE6D /* crunches3.jpg in Resources */,
 				6370E92D1AD4726F0053BE6D /* Images.xcassets in Resources */,
@@ -592,6 +609,7 @@
 				6370E96D1AD47A360053BE6D /* RatingViewController.m in Sources */,
 				6370E9221AD4726F0053BE6D /* AppDelegate.m in Sources */,
 				6370E99F1AD47BDA0053BE6D /* HomeViewController.m in Sources */,
+				C07A4F331AF283590098E956 /* AppSettingsViewController.m in Sources */,
 				6370E9761AD47A790053BE6D /* ExerciseTableViewCell.m in Sources */,
 				6370E9541AD477110053BE6D /* Therapist.m in Sources */,
 				6370E9881AD47B1C0053BE6D /* MusicViewController.m in Sources */,
@@ -740,7 +758,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSoothe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -751,7 +769,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iSoothe/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
