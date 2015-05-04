@@ -41,4 +41,6 @@
 
 -(NSString*)getLoginString;
 
+-(void)checkTherapistID;
+
 @end

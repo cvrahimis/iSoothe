@@ -173,6 +173,7 @@
 -(void) ratingScreen{
     RatingViewController *rateVC = [[RatingViewController alloc] init];
     rateVC.exit = YES;
+    rateVC.isFromActivity = YES;
     [self presentViewController:rateVC
                        animated:YES
                      completion:nil];
@@ -248,6 +249,7 @@
         {
             NSLog(@"%s ================== Rating Button Pressed", __PRETTY_FUNCTION__);
             RatingViewController *ratingVC = [[RatingViewController alloc] init];
+            ratingVC.isFromActivity = YES;
             [self.navigationController pushViewController:ratingVC animated:YES];
             break;
         }

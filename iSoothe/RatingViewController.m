@@ -16,7 +16,7 @@
 @end
 
 @implementation RatingViewController
-@synthesize background, doneBtn, topLbl, bottonLbl, okBtn, happyBtn, thermometer, mesurmentView, mood, exit, bec, duration, time, activity;
+@synthesize background, doneBtn, topLbl, bottonLbl, okBtn, happyBtn, thermometer, mesurmentView, mood, exit, bec, duration, time, activity, isFromActivity;
 @synthesize loginString; //Debug
 
 -(id) init{
@@ -153,7 +153,6 @@
         swiped = NO;
         moodPressed = NO;
         mood = @"";
-        
     }
     return self;
 }
@@ -183,6 +182,12 @@
     /*if(loginString){//Debug
         [self.view makeToast:loginString duration:15.0 position:[NSValue valueWithCGPoint:CGPointMake(frameWidth / 2, frameHeight /2)]];
     }*/
+    if(!isFromActivity)
+    {
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        bec = [[BackEndComunicator alloc] initWithManagedObjectContext:appDelegate.managedObjectContext];
+        [bec checkTherapistID];
+    }
     
 }
 

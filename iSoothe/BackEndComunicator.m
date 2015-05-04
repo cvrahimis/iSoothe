@@ -69,6 +69,58 @@
     return loginCred;
 }
 
+-(void)checkTherapistID{
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Patient" inManagedObjectContext: _managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSError *error = nil;
+    NSArray *patients = [_managedObjectContext executeFetchRequest:fetchRequest error: &error];
+    if(patients != nil)
+    {
+        Patient *patient = [patients objectAtIndex:0];
+    
+        NSString *post = [NSString stringWithFormat:@"Username=%@&Password=%@",patient.patientLogin,patient.patientPassword];
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
+        NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/Login.php"]]];
+        [request setHTTPMethod:@"POST"];
+        [request setTimeoutInterval:10];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        __block NSEntityDescription *entity = nil;
+        [NSURLConnection sendAsynchronousRequest:request
+                                           queue:[NSOperationQueue mainQueue]
+                               completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+                                   result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                                   NSArray *phpData = [result componentsSeparatedByString: @","];
+                                   if([phpData count] == 8)
+                                   {
+                                       
+                                       entity = [NSEntityDescription entityForName:@"Therapist" inManagedObjectContext: _managedObjectContext];
+                                       [fetchRequest setEntity:entity];
+                                       error = nil;
+                                       NSArray *therapists = [_managedObjectContext executeFetchRequest:fetchRequest error: &error];
+                                       if (therapists != nil) {
+                                           Therapist *therapist = [therapists objectAtIndex:0];
+                                           NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+                                           f.numberStyle = NSNumberFormatterNoStyle;
+                                           if (therapist.therapistId != [f numberFromString:[phpData objectAtIndex:1]]) {
+                                               therapist.therapistId = [f numberFromString:[phpData objectAtIndex:1]];
+                                               therapist.therapistFirstName = [phpData objectAtIndex:6];
+                                               therapist.therapistLastName = [phpData objectAtIndex:7];
+                                               patient.therapistId = [f numberFromString:[phpData objectAtIndex:1]];
+                                               error = nil;
+                                               [_managedObjectContext save:&error];
+                                           }
+                                       }
+                                   }
+                               }
+         ];
+    }
+}
+
 - (BOOL) loginWithUserName:(NSString*) username andPassword:(NSString*) password{
     NSString *post = [NSString stringWithFormat:@"Username=%@&Password=%@",username,password];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
@@ -90,8 +142,8 @@
     [request setHTTPBody:postData];
     NSData *serverData = [NSURLConnection sendSynchronousRequest: request returningResponse:nil error:nil];
     [_responseData appendData:serverData];
-    //result = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-    result = [[NSString alloc] initWithData:serverData encoding:NSUTF8StringEncoding];
+    result = [[NSString alloc] initWithData:serverData encoding:NSASCIIStringEncoding];
+    //result = [[NSString alloc] initWithData:serverData encoding:NSUTF8StringEncoding];
     loginCred = result;
     NSArray *phpData = [result componentsSeparatedByString: @","];
     
@@ -200,9 +252,9 @@
         NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         //Request for simulator
-        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iCopeDBInserts/AddActivity.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
         //Request for device
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.8:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
+        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.8:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
         //Request for Iona server
         //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/AddActivity.php"]]];
         

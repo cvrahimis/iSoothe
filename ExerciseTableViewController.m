@@ -70,7 +70,7 @@
     rvc.duration = [[[[[[NSString stringWithFormat:@"%li", (long)hours] stringByAppendingString:@" hours "] stringByAppendingString:[NSString stringWithFormat:@"%li", (long)minuets]] stringByAppendingString:@" minuets " ] stringByAppendingString:[NSString stringWithFormat:@"%li", (long)seconds]] stringByAppendingString:@" seconds"];
     rvc.time = startTime;
     rvc.activity = @"Exercise";
-    
+    rvc.isFromActivity = YES;
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:rvc];
     

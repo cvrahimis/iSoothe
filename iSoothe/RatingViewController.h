@@ -37,8 +37,9 @@
     int urge;
     double section;
     NSString *loginString;//Debug
+    BOOL isFromActivity;
 }
-
+@property (nonatomic) BOOL isFromActivity;
 @property (nonatomic) BOOL exit;
 @property (strong, nonatomic) UIImageView *background;
 @property (strong, nonatomic) UIButton *doneBtn;
