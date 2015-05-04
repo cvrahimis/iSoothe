@@ -210,7 +210,6 @@
 		6370E9101AD4726F0053BE6D = {
 			isa = PBXGroup;
 			children = (
-				C07A4F361AF299B70098E956 /* CoreBluetooth.framework */,
 				6370E92E1AD4726F0053BE6D /* LaunchScreen.xib */,
 				6370E9291AD4726F0053BE6D /* Main.storyboard */,
 				6370E9231AD4726F0053BE6D /* iSoothe.xcdatamodeld */,
@@ -463,6 +462,7 @@
 		6370E9CA1AD47C270053BE6D /* Framworks */ = {
 			isa = PBXGroup;
 			children = (
+				C07A4F361AF299B70098E956 /* CoreBluetooth.framework */,
 				6370E9D31AD47C910053BE6D /* MediaPlayer.framework */,
 				6370E9D11AD47C850053BE6D /* SystemConfiguration.framework */,
 				6370E9CF1AD47C790053BE6D /* UIKit.framework */,

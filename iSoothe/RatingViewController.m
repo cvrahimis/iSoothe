@@ -188,7 +188,6 @@
         bec = [[BackEndComunicator alloc] initWithManagedObjectContext:appDelegate.managedObjectContext];
         [bec checkTherapistID];
     }
-    
 }
 
 -(long) Time {
