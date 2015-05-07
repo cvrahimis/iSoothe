@@ -83,7 +83,8 @@
         NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
         NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/Login.php"]]];
+        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/Login.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/iSoothe/iSootheMobile/Login.php"]]];
         [request setHTTPMethod:@"POST"];
         [request setTimeoutInterval:10];
         [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -252,11 +253,11 @@
         NSString *postLength = [NSString stringWithFormat:@"%lu",(unsigned long)[postData length]];
         NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
         //Request for simulator
-        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
+        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
         //Request for device
         //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://192.168.1.8:8888/iSoothe/iSootheMobile/AddActivity.php"]]];
         //Request for Iona server
-        //[request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/AddActivity.php"]]];
+        [request setURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://isoothe.cs.iona.edu/iSoothe/iSootheMobile/AddActivity.php"]]];
         
         [request setHTTPMethod:@"POST"];
         [request setTimeoutInterval:5];
